@@ -68,13 +68,14 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color:#4F4F4F;
     color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
+    border-ratius: 54px;
 }
 
 #greeting {
@@ -111,7 +112,7 @@
         .quiz-container, .result-container {
             background: white;
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 300px;
@@ -260,7 +261,7 @@
    <div id="name-prompt" class="overlay">
         <div class="name-container">
             <h1>Bem-vindo!</h1>
-            <p>Por favor, insira seu nome para continuar, não se preocupe sera necessario digitar uma vez.</p>
+            <p>Por favor, insira seu nome para responder ao quiz.Vai necessario digitar uma vez.</p>
             <input type="text" id="username" placeholder="Digite seu nome" required>
             <button onclick="saveName()">Confirmar</button>
         </div>
@@ -295,6 +296,16 @@
     </div>
 
     <script>
+      
+      function salvarProgresso(progresso) {
+    localStorage.setItem('progresso', JSON.stringify(progresso));
+}
+
+function carregarProgresso() {
+    const progresso = localStorage.getItem('progresso');
+    return JSON.parse(progresso) || {};
+}
+      
 const quizData = [
     {
         question: "Quem é o Aluno mais gado do Porto Seguro?",
@@ -437,7 +448,7 @@ function saveName() {
 function displayContent(userName) {
     document.getElementById("name-prompt").style.display = "none";
     document.getElementById("content").style.display = "block";
-    document.getElementById("greeting").innerText = `Bem vindo , ${userName}`;
+    document.getElementById("greeting").innerText = `Olá, ${userName}!`;
 }
 let currentQuestion = 0;
 let correctAnswers = 0;
