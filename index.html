@@ -335,6 +335,44 @@
     </div>
 
     <script>
+      // Verifica se o modo escuro está ativado
+function isDarkModeEnabled() {
+    return document.body.classList.contains('dark-mode');
+}
+
+// Ativa o modo escuro e salva a preferência no armazenamento local
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'enabled');
+}
+
+// Desativa o modo escuro e salva a preferência no armazenamento local
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'disabled');
+}
+
+// Toggle do modo escuro
+function toggleDarkMode() {
+    if (isDarkModeEnabled()) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+    // Salvando imediatamente após o clique do usuário
+    localStorage.setItem('darkMode', isDarkModeEnabled() ? 'enabled' : 'disabled');
+}
+
+// Verifica a preferência do modo escuro no carregamento da página
+window.onload = function() {
+    var darkModeStatus = localStorage.getItem('darkMode');
+    if (darkModeStatus === 'enabled') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+}
+      
       // Function to set a cookie for 30 days
     function setCookie(name, value, days) {
         var expires = "";
