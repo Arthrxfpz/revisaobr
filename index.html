@@ -8,6 +8,41 @@
   
   
     <style>
+  /* Styling for the popup */
+    .popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        text-align: center;
+        transition: height 0.5s;
+        overflow: hidden;
+    }
+    /* Styling for the buttons */
+    .popup button {
+        padding: 5px 10px;
+        margin: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+  /* Dark mode styles */
+    body.dark-mode {
+        background-color: #333;
+    }
+    body.dark-mode .popup {
+        background-color: #1e1e1e;
+      border:1px solid black;
+    }
   .overlay {
     position: fixed;
     top: 0;
@@ -258,6 +293,10 @@
     </style>
 </head>
 <body>
+  <div class="popup" id="cookiePopup">
+    <p>Este site utiliza Cookies ele guarda suas informações com todo cuidado.</p>
+    <button onclick="acceptCookies()">Aceitar</button>
+</div>
    <div id="name-prompt" class="overlay">
         <div class="name-container">
             <h1>Bem-vindo!</h1>
@@ -296,6 +335,54 @@
     </div>
 
     <script>
+      // Function to set a cookie for 30 days
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Function to get a cookie value
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for(var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) == ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) == 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+
+    // Function to check if the cookie has been accepted
+    function checkCookie() {
+        if (!getCookie("cookieAccepted")) {
+            document.getElementById("cookiePopup").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("cookiePopup").style.height = "100px";
+            }, 100);
+        }
+    }
+
+    // Function to accept cookies and hide the popup
+    function acceptCookies() {
+        setCookie("cookieAccepted", "true", 30);
+        document.getElementById("cookiePopup").style.height = "0";
+        setTimeout(function() {
+            document.getElementById("cookiePopup").style.display = "none";
+        }, 500); // 0.5s transition time
+    }
+
+    // Check if the cookie has been accepted when the page loads
+    checkCookie();
       
       function salvarProgresso(progresso) {
     localStorage.setItem('progresso', JSON.stringify(progresso));
