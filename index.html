@@ -177,10 +177,7 @@
             animation: fade-in 0.5s ease-out;
             margin-bottom: 10px;
             transition: background 0.5s ease, color 0.5s ease;
-            border: 2px solid#9400D3;          
-          
-           
-           
+            border: 2px solid#9400D3;  
             
         }
         body.dark-mode .quiz-container,
@@ -328,9 +325,23 @@
     width: 100%;
     border: 2px solid black; 
 }
+  #barra-progresso {
+    position: fixed; /* Mantém a barra de progresso fixa no topo */
+    top: 0; /* Alinha a barra de progresso no topo da página */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Altura da barra de progresso */
+    background-color: white; /* Cor da barra de progresso */
+    z-index: 30; /* Garante que a barra de progresso esteja sempre na frente de outros elementos */
+    transition: width 0.5s ease; /* Efeito de transição suave */
+}
     </style>
 </head>
 <body>
+  <body>
+    <div id="barra-progresso"></div>
+    <!-- Restante do seu conteúdo -->
+</body>
   <div class="popup" id="cookiePopup">
     <p>Este site utiliza Cookies ele guarda suas informações com todo cuidado.</p>
     <button onclick="acceptCookies()">Aceitar</button>
@@ -645,6 +656,7 @@ function loadQuestion() {
     const questionEl = document.getElementById('question');
     const optionsEl = document.getElementById('quiz-options');
     const progressEl = document.getElementById('questions-progress');
+    const barraProgresso = document.getElementById('barra-progresso');
 
     questionEl.textContent = quizData[currentQuestion].question;
     optionsEl.innerHTML = '';
@@ -657,8 +669,10 @@ function loadQuestion() {
     });
 
     progressEl.textContent = `Perguntas: ${currentQuestion + 1}/${quizData.length}`;
+    // Atualiza a barra de progresso
+    const progressoPercentual = ((currentQuestion + 1) / quizData.length) * 100;
+    barraProgresso.style.width = `${progressoPercentual}%`;
 }
-      
 
 function checkAnswer(button, isCorrect) {
     const optionsEl = document.getElementById('quiz-options');
