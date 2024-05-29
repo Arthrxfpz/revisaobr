@@ -8,6 +8,7 @@
   
   
     <style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rowdies:wght@300;400;700&display=swap');
   /* Styling for the popup */
     .popup {
         display: none;
@@ -30,8 +31,8 @@
     }
     /* Styling for the buttons */
     .popup button {
-        padding: 5px 10px;
-        margin: 10px;
+        padding: 5px 5px;
+        margin: 0px;
         border: none;
         background-color: #9400D3;
         color: white;
@@ -67,6 +68,7 @@
     max-width: 300px;
     width: 100%;
   border: 2px solid#9400D3; 
+  
 }
 
 .name-container h1 {
@@ -78,6 +80,7 @@
 .name-container p {
     margin: 15px 0;
     color: #555;
+   
 }
 
 .name-container input {
@@ -104,21 +107,43 @@
     background-color: 	#9400D3;
 }
 
+:root {
+    --navbar-bg-light: #9400D3; /* Cor de fundo da Navbar no modo claro */
+    --navbar-text-light: white; /* Cor do texto da Navbar no modo claro */
+  border: 1px solid white;
+
+    --navbar-bg-dark: #333; /* Cor de fundo da Navbar no modo escuro */
+    --navbar-text-dark: white; /* Cor do texto da Navbar no modo escuro */
+}
+
+body.darkTheme {
+    --navbar-bg: var(--navbar-bg-dark);
+    --navbar-text: var(--navbar-text-dark);
+}
+
+body.lightTheme {
+    --navbar-bg: var(--navbar-bg-light);
+    --navbar-text: var(--navbar-text-light);
+  
+}
+
 #navbar {
     display: flex;
     align-items: center;
-    padding: 10px 5px;
-    background-color:	#9400D3;
-    color: white;
+    padding: 5px 5px;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
-   border: 1px solid black;
-  box-shadow: offsetX offsetY blurRadius spreadRadius color;
-    
+    box-shadow: offsetX offsetY blurRadius spreadRadius color;
+   margin-top: 5px;
+  
 }
+  
+  
 
 #greeting {
     font-size: 20px;
@@ -152,7 +177,7 @@
 }
         body {
           
-            font-family: Roboto, sans-serif;
+            font-family: "Montserrat", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -162,6 +187,7 @@
             color: #333;
             transition: background-color 0.5s ease, color 0.5s ease;
             user-select:none;
+          
         }
         body.dark-mode {
             background-color: #121212;
@@ -178,6 +204,8 @@
             animation: fade-in 0.5s ease-out;
             margin-bottom: 10px;
             transition: background 0.5s ease, color 0.5s ease;
+          
+          
           
            
             
@@ -199,12 +227,13 @@
             font-size: 20px;
         }
         .quiz-options button {
+          font-family: "Montserrat", sans-serif;
             display: block;
             width: 100%;
             padding:10px;
             margin: 5px 0;
             border: none;
-            border-radius: 15px;
+            border-radius: 5px;
             cursor: pointer;
             background-color: #e7e7e7;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
@@ -328,23 +357,93 @@
             background-color: #A020F0;
         }
   footer {
-    background-color: 	#9400D3;
-    color: #fff;
+    background-color:  #D3D3D3;
+    color: black;
     text-align: center;
-    padding: 1px 4;
+    padding: 1px 1;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    border: 2px solid black; 
+    border: 1px solid black; 
+}
+  
+.toggle-container {
+    position: fixed;
+    top: 4px; /* Ajuste conforme necessário */
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px; /* Tamanho do texto */
+  z-index: 40;
+}
+
+.toggle-label {
+    margin-bottom: 2px; /* Espaço entre o texto e o botão */
+}
+
+/* Restante do seu CSS */
+
+
+/* Estilos do botão de alternância */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #9400D3
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+body.dark-mode footer {
+    background-color:#121212;/* Cor de fundo mais escura para o modo escuro */
+    color: #ccc; /* Cor do texto mais clara para o modo escuro */
+    border-color: white; /* Cor da borda mais clara para o modo escuro */
 }
   #barra-progresso {
     position: fixed; /* Mantém a barra de progresso fixa no topo */
     top: 0; /* Alinha a barra de progresso no topo da página */
     left: 0;
     width: 100%;
-    height: 5px; /* Altura da barra de progresso */
-    background-color: white; /* Cor da barra de progresso */
+    height: 7px; /* Altura da barra de progresso */
+    background-color:#9400D3;/* Cor da barra de progresso */
     z-index: 30; /* Garante que a barra de progresso esteja sempre na frente de outros elementos */
     transition: width 0.5s ease; /* Efeito de transição suave */
 }
@@ -352,6 +451,13 @@
 </head>
 <body>
   <body>
+    <div class="toggle-container">
+    <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+    <span class="toggle-label">Modo Escuro</span>
+</div>
     <div id="barra-progresso"></div>
     <!-- Restante do seu conteúdo -->
 </body>
@@ -371,9 +477,7 @@
         <div id="navbar">
             <div id="greeting"></div>
         </div>
-    <button id="theme-toggle" onclick="toggleDarkMode()">
-    <img id="theme-image" src="https://i.ibb.co/tHY6B7s/dark-mode-24dp-FILL0-wght400-GRAD0-opsz24.png" alt="Tema Claro">
-</button>
+  
     <div class="quiz-container" id="quiz-container">
         <div class="quiz-header">
             <h2>Quiz Portinho</h2>
@@ -755,7 +859,7 @@ function toggleDarkMode() {
     if (body.classList.contains('dark-mode')) {
         themeImage.src = 'https://i.ibb.co/MGC6Nhq/light-mode-24dp-FILL0-wght400-GRAD0-opsz24-1.png';
     } else {
-        themeImage.src = 'https://i.ibb.co/tHY6B7s/dark-mode-24dp-FILL0-wght400-GRAD0-opsz24.png';
+        themeImage.src = 'https://i.ibb.co/B20YLK4/3236878.png';
     }
 }
 loadQuestion();
