@@ -61,7 +61,8 @@
             align-items: center;
             height: 100vh;
             background-color: black;
-            animation: fadeOutLoading 2s 4s forwards;
+            animation: fadeOutLoading 0s 0s forwards;
+          overflow: hidden;
         }
 
         .loading-title {
@@ -267,12 +268,12 @@
             setTimeout(() => {
                 document.querySelector('.splash-screen').style.display = 'none';
                 document.querySelector('.loading-screen').style.display = 'flex';
-            }, 4000);
+            }, 2000);
 
             setTimeout(() => {
                 document.querySelector('.loading-screen').style.display = 'none';
                 document.querySelector('.main-content').style.display = 'block';
-            }, 6000);
+            }, 2000);
 
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             const tabsContainer = document.getElementById('tabsContainer');
