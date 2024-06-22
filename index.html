@@ -11,6 +11,7 @@
             background-color: black;
             color: white;
             overflow-x: hidden;
+           user-select: none;
         }
 
         .splash-screen {
@@ -194,6 +195,8 @@
     </style>
 </head>
 <body>
+  <div id="progressoSalvamento">Salvando...</div>
+  
     <div class="splash-screen">
         <h1 class="splash-title">Revisão</h1>
     </div>
@@ -215,13 +218,19 @@
                 <a href="#tab2" class="tab-link">Matematica</a>
                 <a href="#tab3" class="tab-link">Português</a>
               <a href="#tab4" class="tab-link">Ciências</a>
+              <a href="#tab5" class="tab-link">Inglês</a>
+              <a href="#tab6" class="tab-link">Religião</a>
+              <a href="#tab7" class="tab-link">Geofrafia</a>
+              <a href="#tab8" class="tab-link">História</a>
+              <a href="#tab9" class="tab-link">Artes</a>
                 <!-- Adicione mais abas conforme necessário -->
             </div>
         </div>
         <div class="content" id="content">
             <div id="tab1" class="tab-content hidden">
                 <h2>Seja Bem vindo ao aplicativo da Revisão!</h2>
-                <p>Aqui você vai ter acesso a todos os conteudos e materias do 9° Ano B!
+                <p>Aqui você vai ter acesso a todos os conteudos e materias do 9° Ano B! <br> <br> Esta é a versão inicial do aplicativo, está sujeito a receber alterações!
+                  
                   
                 </p>
                <div class="square">
@@ -234,8 +243,11 @@
             </div>
           
             <div id="tab2" class="tab-content hidden">
-                <h2>Conteúdo da Aba 2</h2>
-                <p>Texto da Aba 2</p>
+                <h2>Matematica</h2>
+                <p>No momento, nenhuma prova de matematica foi marcada, quando for, você vai ver com
+                  detalhes.
+                </p>
+              <p> Em Julho, vai ter uma nova prova, mas ainda não sabemos a data, quando soubermos vai ficar aqui!</p>
             </div>
             <div id="tab3" class="tab-content hidden">
                 <h2>Conteúdo da Aba 3</h2>
@@ -249,6 +261,51 @@
         </div>
     </div>
     <script>
+  
+  
+  // Função para salvar o conteúdo da página no localStorage
+        function salvarConteudo() {
+            var conteudo = document.documentElement.outerHTML;
+            localStorage.setItem('paginaOffline', conteudo);
+        }
+
+        // Exibir porcentagem de salvamento
+        function exibirProgressoSalvamento(porcentagem) {
+            var progresso = document.getElementById('progressoSalvamento');
+            progresso.textContent = 'Salvando... ' + porcentagem + '%';
+        }
+
+        // Salvar o conteúdo da página quando a página for carregada
+        window.addEventListener('load', function() {
+            // Simular um processo de salvamento com uma barra de progresso
+            for (var i = 0; i <= 100; i++) {
+                setTimeout(function(porcentagem) {
+                    return function() {
+                        exibirProgressoSalvamento(porcentagem);
+                        if (porcentagem === 100) {
+                            salvarConteudo();
+                            exibirProgressoSalvamento('Concluído');
+                        }
+                    };
+                }(i), i * 10); // Atraso de 10ms para cada porcentagem
+            }
+        });
+
+        // Função para carregar o conteúdo da página do localStorage
+        function carregarConteudoOffline() {
+            var conteudoSalvo = localStorage.getItem('paginaOffline');
+            if (conteudoSalvo) {
+                document.open();
+                document.write(conteudoSalvo);
+                document.close();
+            }
+        }
+
+        // Verificar se estamos offline antes de carregar o conteúdo da página
+        if (!navigator.onLine) {
+            carregarConteudoOffline();
+        }
+  
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 document.querySelector('.splash-screen').style.display = 'none';
