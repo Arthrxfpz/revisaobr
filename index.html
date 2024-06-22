@@ -195,8 +195,6 @@
     </style>
 </head>
 <body>
-  <div id="progressoSalvamento">Salvando...</div>
-  
     <div class="splash-screen">
         <h1 class="splash-title">Revisão</h1>
     </div>
@@ -220,7 +218,7 @@
               <a href="#tab4" class="tab-link">Ciências</a>
               <a href="#tab5" class="tab-link">Inglês</a>
               <a href="#tab6" class="tab-link">Religião</a>
-              <a href="#tab7" class="tab-link">Geofrafia</a>
+              <a href="#tab7" class="tab-link">Geografia</a>
               <a href="#tab8" class="tab-link">História</a>
               <a href="#tab9" class="tab-link">Artes</a>
                 <!-- Adicione mais abas conforme necessário -->
@@ -263,48 +261,7 @@
     <script>
   
   
-  // Função para salvar o conteúdo da página no localStorage
-        function salvarConteudo() {
-            var conteudo = document.documentElement.outerHTML;
-            localStorage.setItem('paginaOffline', conteudo);
-        }
-
-        // Exibir porcentagem de salvamento
-        function exibirProgressoSalvamento(porcentagem) {
-            var progresso = document.getElementById('progressoSalvamento');
-            progresso.textContent = 'Salvando... ' + porcentagem + '%';
-        }
-
-        // Salvar o conteúdo da página quando a página for carregada
-        window.addEventListener('load', function() {
-            // Simular um processo de salvamento com uma barra de progresso
-            for (var i = 0; i <= 100; i++) {
-                setTimeout(function(porcentagem) {
-                    return function() {
-                        exibirProgressoSalvamento(porcentagem);
-                        if (porcentagem === 100) {
-                            salvarConteudo();
-                            exibirProgressoSalvamento('Concluído');
-                        }
-                    };
-                }(i), i * 10); // Atraso de 10ms para cada porcentagem
-            }
-        });
-
-        // Função para carregar o conteúdo da página do localStorage
-        function carregarConteudoOffline() {
-            var conteudoSalvo = localStorage.getItem('paginaOffline');
-            if (conteudoSalvo) {
-                document.open();
-                document.write(conteudoSalvo);
-                document.close();
-            }
-        }
-
-        // Verificar se estamos offline antes de carregar o conteúdo da página
-        if (!navigator.onLine) {
-            carregarConteudoOffline();
-        }
+  
   
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
