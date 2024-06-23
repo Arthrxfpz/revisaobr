@@ -157,7 +157,7 @@
         }
 
         .content {
-            padding: 20px;
+            padding: 10px;
             margin-top: 60px;
             display: flex;
             justify-content: center;
@@ -193,6 +193,37 @@
             opacity: 0;
             transform: translateY(20px);
         }
+  .menu {
+      position: absolute;
+      right: 20px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    .menu span {
+      color: white; /* Cor branca */
+      font-size: 24px; /* Tamanho maior */
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #616161FF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .menu ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .menu ul li:hover {
+      background-color: #f1f1f1;
+    }
     </style>
 </head>
 <body>
@@ -210,6 +241,13 @@
                 <div class="bar"></div>
             </div>
             <div class="navbar-title">Revisão</div>
+          <div class="menu" onclick="toggleMenu()">
+    <span>&vellip;</span>
+    <ul id="menuItems">
+      <li onclick="reportProblem()">Relatar um problema</li>
+      <li onclick="checkVersions()">Verificar versões</li>
+    </ul>
+  </div>
         </div>
         <div class="tabs-container" id="tabsContainer">
             <div class="tabs" id="tabs">
@@ -293,7 +331,28 @@
         </div>
     </div>
     <script>
-  
+  function toggleMenu() {
+      var menu = document.getElementById('menuItems');
+      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+    }
+
+    function reportProblem() {
+      // Redirecionar para o link de relatar problema
+      window.location.href = 'https://wa.me/qr/7G7URW4BDJT2F1';
+    }
+
+    function checkVersions() {
+      // Redirecionar para o link de verificar versões
+      window.location.href = 'https://www.mediafire.com/folder/qpuyyl1xwj56m/Revisao';
+    }
+
+    // Fechar o menu ao clicar em qualquer parte da tela
+    document.addEventListener('click', function(event) {
+      var menu = document.getElementById('menuItems');
+      if (event.target.closest('.menu') === null && menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    });
   
   
   
