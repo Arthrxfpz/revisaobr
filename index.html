@@ -267,6 +267,10 @@
     .menu ul li:hover {
       background-color: #f1f1f1;
     }
+  .no-transitions * {
+      transition: none !important;
+    }
+  
     </style>
 </head>
 <body>
@@ -300,6 +304,7 @@
     <ul id="menuItems">
       <li onclick="reportProblem()">Relatar um problema</li>
       <li onclick="checkVersions()">Verificar versões</li>
+       <li onclick="toggleTransitions()">Desativar transições</li>
     </ul>
   </div>
         </div>
@@ -390,31 +395,55 @@
         const displayDate = new Date('2024-06-22T00:00:00'); // Configurar a data e hora de exibição do pop-up
 
         document.addEventListener('DOMContentLoaded', (event) => {
-            setTimeout(() => {
-                const savedDate = new Date(localStorage.getItem('popupDisplayDate'));
-                const currentDate = new Date();
+      if (localStorage.getItem('transitionsDisabled') === 'true') {
+        document.body.classList.add('no-transitions');
+        updateToggleText();
+      }
+    });
 
-                if (currentDate >= displayDate && savedDate.toString() !== displayDate.toString()) {
-                    document.getElementById('popup').style.display = 'flex';
-                }
-            }, 10000);
+    function toggleMenu() {
+      var menu = document.getElementById('menuItems');
+      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+    }
 
-            document.getElementById('installBtn').addEventListener('click', () => {
-                localStorage.setItem('popupMessage', popupMessage);
-                localStorage.setItem('popupDisplayDate', displayDate.toString());
-                window.location.href = 'https://www.mediafire.com/file/tyblwakoklk92hs/Provas_%25283%2529.apk/file';
-            });
+    function reportProblem() {
+      // Redirecionar para o link de relatar problema
+      window.location.href = 'https://seulinkdereportarproblema.com';
+    }
 
-            document.getElementById('installedBtn').addEventListener('click', () => {
-                localStorage.setItem('popupMessage', popupMessage);
-                localStorage.setItem('popupDisplayDate', displayDate.toString());
-                document.getElementById('popup').style.display = 'none';
-            });
+    function checkVersions() {
+      // Redirecionar para o link de verificar versões
+      window.location.href = 'https://seulinkdeverificarversoes.com';
+    }
 
-            document.getElementById('laterBtn').addEventListener('click', () => {
-                document.getElementById('popup').style.display = 'none';
-            });
-        });
+    function toggleTransitions() {
+      var body = document.body;
+      if (body.classList.contains('no-transitions')) {
+        body.classList.remove('no-transitions');
+        localStorage.setItem('transitionsDisabled', 'false');
+      } else {
+        body.classList.add('no-transitions');
+        localStorage.setItem('transitionsDisabled', 'true');
+      }
+      updateToggleText();
+    }
+
+    function updateToggleText() {
+      var toggleText = document.querySelector('li[onclick="toggleTransitions()"]');
+      if (localStorage.getItem('transitionsDisabled') === 'true') {
+        toggleText.textContent = 'Ativar transições';
+      } else {
+        toggleText.textContent = 'Desativar transições';
+      }
+    }
+
+    // Fechar o menu ao clicar em qualquer parte da tela
+    document.addEventListener('click', function(event) {
+      var menu = document.getElementById('menuItems');
+      if (event.target.closest('.menu') === null && menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    });
   
   
   function toggleMenu() {
