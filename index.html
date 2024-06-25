@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
     <style>
+  button a.tab-link {
+    display: inline-block;
+    padding: 15px 40px; /* Ajuste o padding conforme desejado */
+    background-color: white;
+    color: black;
+    border: 0px solid black;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px; /* Ajuste a largura conforme desejado */
+    outline: none; /* Remove a borda ao redor do botão */
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+}
+
+button a.tab-link:hover {
+    background-color: white;
+    color: white;
+}
   .popup {
             display: none;
             position: fixed;
@@ -346,15 +366,16 @@
             <div id="tab1" class="tab-content hidden">
               
               <div class="square"> 
-                <h2>Seja Bem vindo ao aplicativo da Revisão!</h2>
+                <h1>Seja Bem vindo ao aplicativo da Revisão!</h1>
                 <p>&#x21E8;Aqui você vai ter acesso a todos os conteudos e materias do 9° Ano B! <br> <br>&#x21E8;Esta é a versão inicial do aplicativo, está sujeito a receber alterações!
                 </p>
               </div>
               <div class="square">
-                <h2>Proximas Provas:</h2>
-                <p> <h2>MATEMÁTICA(sem data no momento)</h2><br> Os conteúdos estão na aba de matematica.</p>
-                
-                
+                <h1>Provas</h1>
+                <h2>Teste de matemática</h2> <h2> Sem Data marcada</h2> <p> O teste não tem uma data marcada, mas nos estamos colocando o conteúdo antecipadamente</p>
+                <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
+    <a href="#tab2" class="tab-link" style="text-decoration: none; color: inherit;">Matemática</a>
+</button>
               </div>
               
               
@@ -392,8 +413,8 @@
                 <h2>Matematica</h2>
               
               <div class="square">
-                <h2> Conteúdos da prova de matemática</h2>
-                <p> O que sabemos é que vai ter uma prova, porem ela ainda não tem data mas sabemos o conteúdo.</p>
+                <h2> Conteúdos do teste de matemática</h2>
+                <p> O que sabemos é que vai ter um teste, porem ele ainda não tem data mas sabemos o conteúdo.</p>
                 <br>
                 <br>
                 <h2> CONTEÚDOS:</h2>
@@ -433,6 +454,8 @@
                   <br>
                   <h3> Explicação</h3>
                   <p> Primeiro você precisa fazer a fatoração dos coeficientes(número fora da raiz)<br> Depois de fazer a <u>Fatoração</u> você vai simplificar com os resultados e depois vai somar tudo. O exemplo acima Mostra isso. </p>
+                  
+                  
                   <br>   <p>Boa Prova!</p>
               </div> 
               
@@ -470,6 +493,10 @@
         </div>
     </div>
     <script>
+      function goToTab(tabId) {
+        const targetTab = document.querySelector(`#${tabId}`);
+        targetTab.scrollIntoView({ behavior: 'smooth' });
+    }
   
   const popupMessage = "Uma nova versão está disponível, instale ela em:";
         const displayDate = new Date('2024-06-22T00:00:00'); // Configurar a data e hora de exibição do pop-up
