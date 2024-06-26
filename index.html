@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
     <style>
+   .accordion {
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
+            background-color: #333; /* Cor do Recolhivel */
+            color: white; /* Cor do texto */
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .accordion:hover, .accordion.active {
+            background-color: #555; /* Cor de hover e ativo */
+        }
+
+        .accordion::after {
+            content: '\002B'; /* Unicode character for "plus" sign (+) */
+            font-size: 16px;
+            color: white; /* Cor do símbolo */
+            transition: transform 0.3s ease; /* Adiciona transição ao símbolo (+/-) */
+        }
+
+        .accordion.active::after {
+            content: "\2212"; /* Unicode character for "minus" sign (−) */
+            transform: rotate(180deg); /* Rotaciona o símbolo ao abrir */
+        }
+
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out; /* Transição suave ao abrir/fechar */
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #333; /* Cor de fundo do conteúdo */
+            color: white; /* Cor do texto do conteúdo */
+        }
+
+        .panel.show {
+            max-height: 500px; /* Altura máxima para o conteúdo do painel */
+            padding: 18px; /* Adiciona padding ao abrir o painel */
+        }
+
+        .panel p {
+            margin: 10px 0;
+        }
   button a.tab-link {
     display: inline-block;
     padding: 15px 40px; /* Ajuste o padding conforme desejado */
@@ -346,6 +400,7 @@ button a.tab-link:hover {
       <li onclick="checkVersions()">Verificar versões</li>
        <li onclick="toggleTransitions()">Desativar transições</li>
     </ul>
+            
   </div>
         </div>
         <div class="tabs-container" id="tabsContainer">
@@ -367,51 +422,70 @@ button a.tab-link:hover {
               
               <div class="square"> 
                 <h1>Seja Bem vindo ao aplicativo da Revisão!</h1>
-                <p>&#x21E8;Aqui você vai ter acesso a todos os conteudos e materias do 9° Ano B! <br> <br>&#x21E8;Esta é a versão inicial do aplicativo, está sujeito a receber alterações!
+                <p> ⮕Aqui você vai ter acesso a todos os conteudos e materias do 9° Ano B! <br> <br> ⮕Esta é a versão inicial do aplicativo, está sujeito a receber alterações!
                 </p>
               </div>
               <div class="square">
                 <h1>Provas</h1>
-                <h2>Teste de matemática</h2> <h2> Sem Data marcada</h2> <p> O teste não tem uma data marcada, mas nos estamos colocando o conteúdo antecipadamente</p>
+                <h4>Teste de matemática</h4> <h4> Sem Data marcada</h4> <p> O teste não tem uma data marcada, mas nos estamos colocando o conteúdo antecipadamente</p>
                 <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
     <a href="#tab2" class="tab-link" style="text-decoration: none; color: inherit;">Matemática</a>
 </button>
               </div>
-              
-              
                <div class="square">
+                 
         <h2>Novidades:</h2>
-        <p>• Interface mais leve, bem mais otimizada e simples de ser usada!<br> <br>
-          • Novo Trimestre, o 2° Trimestre ja começou, e você podera ver todos os conteudos das materias no app<br> <br>
-          • Agora sem carregamento nas paginas, as paginas ficaram extremamente rapidas e melhor!
+        <p> ⮕ Interface mais leve, bem mais otimizada e simples de ser usada!<br> <br>
+            ⮕ Novo Trimestre, o 2° Trimestre ja começou, e você podera ver todos os conteudos das materias no app<br> <br>
+            ⮕Agora sem carregamento nas paginas, as paginas ficaram extremamente rapidas e melhor!
         </p>
     </div>
-              
               <div class="square">
-        <h2>Como está versão Esta funcionando?</h2>
-        <p>• A interface esta sendo formada por (Html,CSS, JavaScript), totalmente programada, Difente de antes que a plataforma Google sites era utilizada.<br> <br>
-          • Nós fizemos um aplicativo mobile para celular, para facilitar na hora de estudar para a prova, uma interface super rapida e alterada.<br> <br>
-          • Você pode receber notificações quando um novo conteúdo ficar disponivel, e conferir aqui!<br> <br>
-          • Um aviso, esse aplicativo não funciona sem internet pois ele usa um servidor leve e não consome memória do dispositivo atual. <br> <br>
-          
-        </p>
-    </div>
-              <div class="square"> 
-                <h2> Horarios 9°Ano B</h2>
-                <div class="image-container">
-        <img src="https://i.ibb.co/LxP4Y0S/IMG-20240228-WA0003.jpg" alt="Descrição da imagem">
-                  <h4> Os horarios estão todos validos e as materias tambem, todas as materias estão disponiveis.</h4>
-    </div>
+                <h2>Avisos</h2>
+                
+                <h4> Aviso oficial mandado pela professora Laisa dia 26/06/2024.</h4>
+                <p>
+
+Conforme a coordenadora Sabrina falou nas turmas, amanhã e sexta-feira estaremos em <b>CONSELHO DE CLASSE.</b> <br> <br>
+
+Trata-se de um Conselho de Classe Participativo, ou seja, participarão as lideranças (líder e vice-líder) das turmas, além dos professores e equipe gestora da escola. <br> <br>Na quinta-feira estarão presentes as lideranças do oitavo ano e na sexta as lideranças do nono ano.<br><br>
+
+Líder e vice-líder, por gentileza, estejam na escola <b>SEXTA-FEIRA às 8h15</b>. Vocês estarão dispensados após a participação das lideranças, ok?<br> <br>
+
+Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Conselho.
+                  
+                </p>
+                
+                
                 
                 
               </div>
               
+              <div class="square">
+        <h2>Como está versão Esta funcionando?</h2>
+        <p> ⮕ A interface esta sendo formada por (Html,CSS, JavaScript), totalmente programada, Difente de antes que a plataforma Google sites era utilizada.<br> <br>
+            ⮕ Nós fizemos um aplicativo mobile para celular, para facilitar na hora de estudar para a prova, uma interface super rapida e alterada.<br> <br>
+            ⮕ Você pode receber notificações quando um novo conteúdo ficar disponivel, e conferir aqui!<br> <br>
+            ⮕Um aviso, esse aplicativo não funciona sem internet pois ele usa um servidor leve e não consome memória do dispositivo atual. <br> <br>
+          
+        </p>
+    </div>
+             
+               <button class="accordion">Clique Aqui para ver os horarios</button>
+<div class="panel">
+       <div class="image-container">
+        <img src="https://i.ibb.co/LxP4Y0S/IMG-20240228-WA0003.jpg" alt="Horarios 9 ano B">
+             
+    </div>
+</div>
+                
+                
+                
               
             </div>
-          
+          <!--Começo da div de matematica-->
             <div id="tab2" class="tab-content hidden">
                 <h2>Matematica</h2>
-              
               <div class="square">
                 <h2> Conteúdos do teste de matemática</h2>
                 <p> O que sabemos é que vai ter um teste, porem ele ainda não tem data mas sabemos o conteúdo.</p>
@@ -455,11 +529,10 @@ button a.tab-link:hover {
                   <h3> Explicação</h3>
                   <p> Primeiro você precisa fazer a fatoração dos coeficientes(número fora da raiz)<br> Depois de fazer a <u>Fatoração</u> você vai simplificar com os resultados e depois vai somar tudo. O exemplo acima Mostra isso. </p>
                   
-                  
                   <br>   <p>Boa Prova!</p>
               </div> 
               
-              <!-- fim da div <!-->
+              <!-- fim da div de matemática<!-->
             </div>
             <div id="tab3" class="tab-content hidden">
                 <h2>Português</h2>
@@ -493,6 +566,24 @@ button a.tab-link:hover {
         </div>
     </div>
     <script>
+      var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.classList.remove("show");
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.classList.add("show");
+            }
+        });
+    }
+      
+      
+      
+      
       function goToTab(tabId) {
         const targetTab = document.querySelector(`#${tabId}`);
         targetTab.scrollIntoView({ behavior: 'smooth' });
