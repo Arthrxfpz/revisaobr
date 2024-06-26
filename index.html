@@ -132,18 +132,23 @@ button a.tab-link:hover {
         }
 
         .splash-screen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black;
-            animation: fadeOut 4s forwards;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:black; /* Adicione a cor de fundo desejada aqui */;
+    animation: fadeOut 2s forwards;
+    overflow: hidden; /* Adiciona esta linha */
+          position: fixed; /* Fixa a posição da splash-screen na janela de visualização */
+    top: 0; /* Garante que a splash-screen esteja posicionada no topo da janela */
+    width: 100%; /* Garante que a largura da splash-screen ocupe toda a largura da janela */
+    overflow: hidden; /* Impede a rolagem do conteúdo dentro da splash-screen */
+}
 
         .splash-title {
-            font-size: 3em;
+            font-size: 4em;
             color: white;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeOut {
@@ -183,7 +188,7 @@ button a.tab-link:hover {
         }
 
         .loading-title {
-            font-size: 2em;
+            font-size: 5em;
             color: white;
             animation: fadeInLoading 2s 2s ease-in-out;
         }
@@ -294,10 +299,10 @@ button a.tab-link:hover {
         }
   .square {
     background-color: #333;
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
 }
 
         .tab-content.active {
@@ -432,7 +437,7 @@ button a.tab-link:hover {
                 
               </div>
               <div class="square">
-                <h2>Matérias</h2>
+                <h1>Matérias</h1>
                 <h4>Teste de matemática</h4>
                 <p> O conteúdo já está disponivel, clique no botão de baixo e confira!</p>
                 <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
@@ -441,7 +446,7 @@ button a.tab-link:hover {
               </div>
               
               <div class="square">
-                <h2>Avisos</h2>
+                <h1>Avisos</h1>
                 
                 <h4> Aviso oficial mandado pela professora Laisa dia 26/06/2024.</h4>
                 <p>
@@ -458,7 +463,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
               </div>
               
               <div class="square">
-        <h2>Como está versão Esta funcionando?</h2>
+        <h1>Como está versão Esta funcionando?</h1>
         <p> ⮕ A interface esta sendo formada por (Html,CSS, JavaScript), totalmente programada, Difente de antes que a plataforma Google sites era utilizada.<br> <br>
             ⮕ Nós fizemos um aplicativo mobile para celular, para facilitar na hora de estudar para a prova, uma interface super rapida e alterada.<br> <br>
             ⮕ Você pode receber notificações quando um novo conteúdo ficar disponivel, e conferir aqui!<br> <br>
