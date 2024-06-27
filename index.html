@@ -150,7 +150,7 @@ button a.tab-link:hover {
         .splash-title {
             font-size: 4em;
             color: white;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
          
        
         }
@@ -225,9 +225,8 @@ button a.tab-link:hover {
             padding: 7px;
             position: fixed;
             width: 100%;
-            z-index: 1000;
+            z-index: 9999;
             top: 0;
-          box-shadow: 0 10px 5px black;
         }
 
         .hamburger-menu {
@@ -692,12 +691,12 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
             setTimeout(() => {
                 document.querySelector('.splash-screen').style.display = 'none';
                 document.querySelector('.loading-screen').style.display = 'flex';
-            }, 1000);
+            }, 1500);
 
             setTimeout(() => {
                 document.querySelector('.loading-screen').style.display = 'none';
                 document.querySelector('.main-content').style.display = 'block';
-            }, 1000);
+            }, 1500);
 
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             const tabsContainer = document.getElementById('tabsContainer');
