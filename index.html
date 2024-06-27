@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
     <style>
+   .welcome-message {
+    position: fixed;
+    top: -100px; /* Posição inicial fora da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #616161FF;
+    border-radius: 0 0 10px 10px; /* Border radius legal na parte de cima */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: top 0.5s ease-in-out; /* Transição suave */
+    text-align: center; /* Centraliza o texto */
+     z-index: 10000;
+     color: white;
+     width: 100%;
+  }
+
+  .show {
+    top: 0px; /* Posição para mostrar o pop-up */
+  }
+  
    .accordion {
             cursor: pointer;
             padding: 18px;
@@ -385,6 +405,10 @@ button a.tab-link:hover {
     </style>
 </head>
 <body>
+  <div class="welcome-message" id="welcome-message">
+  Olá Estudante!
+</div>
+  
     <div id="popup" class="popup">
         <div class="popup-content">
             <p id="popupMessage">Uma nova versão está disponível, instale ela em:</p>
@@ -749,6 +773,17 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
                 tabLinks[0].click();
             }
         });
+      document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      var message = document.getElementById('welcome-message');
+      message.classList.add('show');
+      
+      setTimeout(function() {
+        message.classList.remove('show');
+      }, 1500); // Manter por 3 segundos
+    }, 0000); // Mostrar após 4 segundos
+  });
+      
     </script>
 </body>
 </html>
