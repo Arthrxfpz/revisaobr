@@ -405,8 +405,9 @@ button a.tab-link:hover {
     </style>
 </head>
 <body>
+  
   <div class="welcome-message" id="welcome-message">
-  Olá Estudante!
+  Conteúdo do teste de matemática já esta disponivel!
 </div>
   
     <div id="popup" class="popup">
@@ -631,15 +632,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         targetTab.scrollIntoView({ behavior: 'smooth' });
     }
   
-  const popupMessage = "Uma nova versão está disponível, instale ela em:";
-        const displayDate = new Date('2024-06-22T00:00:00'); // Configurar a data e hora de exibição do pop-up
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-      if (localStorage.getItem('transitionsDisabled') === 'true') {
-        document.body.classList.add('no-transitions');
-        updateToggleText();
-      }
-    });
+  
 
     function toggleMenu() {
       var menu = document.getElementById('menuItems');
@@ -780,7 +773,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
       
       setTimeout(function() {
         message.classList.remove('show');
-      },2500); // Manter por 3 segundos
+      },3000); // Manter por 3 segundos
     }, 2000); // Mostrar após 4 segundos
   });
       
