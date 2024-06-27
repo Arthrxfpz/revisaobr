@@ -7,23 +7,23 @@
     <style>
    .welcome-message {
     position: fixed;
-    top: -100px; /* Posição inicial fora da tela */
+    bottom: -100px; /* Posição inicial fora da tela, na parte inferior */
     left: 50%;
     transform: translateX(-50%);
     background-color: #616161FF;
-    border-radius: 0 0 10px 10px; /* Border radius legal na parte de cima */
+    border-radius: 10px 10px 0 0; /* Border radius na parte de baixo */
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: top 0.5s ease-in-out; /* Transição suave */
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra para baixo */
+    transition: bottom 0.5s ease-in-out; /* Transição suave */
     text-align: center; /* Centraliza o texto */
-     z-index: 10000;
-     color: white;
-     width: 100%;
-  }
+    z-index: 10000;
+    color: white;
+    width: 100%;
+}
 
-  .show {
-    top: 0px; /* Posição para mostrar o pop-up */
-  }
+.show {
+    bottom: 0px; /* Posição para mostrar o pop-up na parte inferior */
+}
   
    .accordion {
             cursor: pointer;
@@ -780,8 +780,8 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
       
       setTimeout(function() {
         message.classList.remove('show');
-      }, 2000); // Manter por 3 segundos
-    }, 1000); // Mostrar após 4 segundos
+      },2500); // Manter por 3 segundos
+    }, 2000); // Mostrar após 4 segundos
   });
       
     </script>
