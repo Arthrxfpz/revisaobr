@@ -13,8 +13,8 @@
             border: 1px solid black;
             outline: none;
             transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
-            background-color:#1C1C1C; /* Cor do Recolhivel */
-            color: white; /* Cor do texto */
+            background-color:white /* Cor do Recolhivel */
+            color: black; /* Cor do texto */
             font-size: 16px;
             display: flex;
             justify-content: space-between;
@@ -25,13 +25,13 @@
         }
 
         .accordion:hover, .accordion.active {
-            background-color: #555; /* Cor de hover e ativo */
+            background-color: white; /* Cor de hover e ativo */
         }
 
         .accordion::after {
             content: '\002B'; /* Unicode character for "plus" sign (+) */
             font-size: 16px;
-            color: white; /* Cor do símbolo */
+            color: black; /* Cor do símbolo */
             transition: transform 0.3s ease; /* Adiciona transição ao símbolo (+/-) */
         }
 
@@ -258,6 +258,7 @@ button a.tab-link:hover {
             transform: translateX(-100%);
             transition: transform 0.5s;
             z-index: 999;
+          overflow-y: auto; /* Adiciona rolagem vertical */
         }
 
         .tabs {
@@ -357,9 +358,9 @@ button a.tab-link:hover {
   
   .image-container {
     width: 100%;
-    max-width: 700px;
-    border: 0px solid #ccc;
-    border-radius: 5px;
+    max-width: 300px;
+    border: none;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -428,14 +429,7 @@ button a.tab-link:hover {
               
               <div class="square"> 
                 <h1>Seja Bem Vindo novamente!</h1>
-                <h5> Acesso Rapido:</h5>
-                               <button class="accordion">Clique Aqui para ver os horarios</button>
-<div class="panel">
-       <div class="image-container">
-        <img src="https://i.ibb.co/LxP4Y0S/IMG-20240228-WA0003.jpg" alt="Horarios 9 ano B">
-       </div>
-             
-    </div>
+                <p> Confira as novidades logo abaixo!</p>
                 
               </div>
               <div class="square">
@@ -445,6 +439,16 @@ button a.tab-link:hover {
                 <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
     <a href="#tab2" class="tab-link" style="text-decoration: none; color: inherit;">Matemática</a>
 </button>
+                
+                <h2> Veja também</h2>
+                <button class="accordion">Horário 9°Ano B</button>
+<div class="panel">
+       <div class="image-container">
+        <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png" alt="Horarios 9 ano B">
+       </div>
+             
+    </div>
+                
               </div>
               
               <div class="square">
