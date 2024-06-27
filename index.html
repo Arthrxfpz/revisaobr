@@ -224,6 +224,7 @@ button a.tab-link:hover {
             width: 100%;
             z-index: 1000;
             top: 0;
+          box-shadow: 0 5px 5px black;
         }
 
         .hamburger-menu {
@@ -251,14 +252,15 @@ button a.tab-link:hover {
             flex-direction: column;
             position: fixed;
             left: 0;
-            top: 40px;
-            width: 250px;
+            top: 38px;
+            width: 300px;
             height: 100%;
-            background-color: #1C1C1C;
+            background-color: black;
             padding-top: 10px;
             transform: translateX(-100%);
             transition: transform 0.5s;
             z-index: 999;
+        
           overflow-y: auto; /* Adiciona rolagem vertical */
         }
 
@@ -270,12 +272,15 @@ button a.tab-link:hover {
 
         .tabs a {
             color: white;
-            padding: 10px 20px;
+            padding: 15px 10px;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
             margin: 5px 10px;
-            border: 1px solid #555;
+            border: none;
             border-radius: 5px;
+          background: #363636;
+          box-shadow: 0 10px 10px 1C1C1C;
+      
         }
 
         .tabs a:hover, .tabs a.active {
@@ -289,6 +294,7 @@ button a.tab-link:hover {
             display: flex;
             justify-content: center;
             transition: opacity 0.5s;
+           
         }
 
         .tab-content {
@@ -303,10 +309,10 @@ button a.tab-link:hover {
         }
   .square {
     background-color: #333;
-    padding: 35px;
-    margin-bottom: 25px;
-    border-radius: 20px;
-    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px black;
 }
 
         .tab-content.active {
@@ -440,15 +446,7 @@ button a.tab-link:hover {
                 <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
     <a href="#tab2" class="tab-link" style="text-decoration: none; color: inherit;">Matemática</a>
 </button>
-                
-                <h2> Veja também</h2>
-                <button class="accordion">Horário 9°Ano B</button>
-<div class="panel">
-       <div class="image-container">
-        <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png" alt="Horarios 9 ano B">
-       </div>
-             
-    </div>
+
                 
               </div>
               
@@ -470,14 +468,30 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
               </div>
               
               <div class="square">
-        <h1>Como está versão Esta funcionando?</h1>
+        <h1>Como essa versão funciona?</h1>
         <p> ⮕ A interface esta sendo formada por (Html,CSS, JavaScript), totalmente programada, Difente de antes que a plataforma Google sites era utilizada.<br> <br>
             ⮕ Nós fizemos um aplicativo mobile para celular, para facilitar na hora de estudar para a prova, uma interface super rapida e alterada.<br> <br>
             ⮕ Você pode receber notificações quando um novo conteúdo ficar disponivel, e conferir aqui!<br> <br>
             ⮕Um aviso, esse aplicativo não funciona sem internet pois ele usa um servidor leve e não consome memória do dispositivo atual. <br> <br>
           
         </p>
+                
     </div>
+              <div class="square">
+                <h2> Você pode estar procurando por</h2>
+                
+                <button class="accordion">Horário 9°Ano B</button>
+<div class="panel">
+       <div class="image-container">
+        <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png" alt="Horarios 9 ano B">
+       </div>
+             
+    </div>
+                
+                
+                
+                
+              </div>
 
             </div>
           <!--Começo da div de matematica-->
