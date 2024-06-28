@@ -189,19 +189,31 @@ button a.tab-link:hover {
         }
 
         .hamburger-menu {
-            cursor: pointer;
-            margin-right: 10px;
-            transition: transform 0.3s;
-        }
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s;
+          z-index:9999;
+}
 
-        .hamburger-menu .bar {
-            width: 30px;
-            height: 3px;
-            background-color: white;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
+.hamburger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
 
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
         .navbar-title {
             font-size: 1.6em;
             color: white;
@@ -234,19 +246,19 @@ button a.tab-link:hover {
 
         .tabs a {
             color: white;
-            padding: 15px 10px;
+            padding: 15px 20px;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
             margin: 5px 10px;
             border: none;
-            border-radius: 5px;
+            border-radius: 7px;
           background: #363636;
-          box-shadow: 0 10px 10px 1C1C1C;
+        
       
         }
 
         .tabs a:hover, .tabs a.active {
-            background-color: #575757;
+            background-color: #696969;
             transform: scale(1.03);
         }
 
@@ -363,6 +375,7 @@ button a.tab-link:hover {
         </div>
         <div class="tabs-container" id="tabsContainer">
             <div class="tabs" id="tabs">
+              
                 <a href="#tab1" class="tab-link">Inicio</a>
                 <a href="#tab2" class="tab-link">Matematica</a>
                 <a href="#tab3" class="tab-link">Português</a>
@@ -515,139 +528,134 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         </div>
     </div>
     <script>
-      var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-                panel.classList.remove("show");
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-                panel.classList.add("show");
-            }
+     
+      document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        document.querySelector('.splash-screen').style.display = 'none';
+    }, 1500);
+
+    setTimeout(() => {
+        document.querySelector('.main-content').style.display = 'block';
+    }, 1500);
+
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const tabsContainer = document.getElementById('tabsContainer');
+
+    hamburgerMenu.addEventListener('click', function() {
+        tabsContainer.style.transform = tabsContainer.style.transform === 'translateX(0%)' ? 'translateX(-100%)' : 'translateX(0%)';
+        hamburgerMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            tabsContainer.style.transform = 'translateX(-100%)';
+            hamburgerMenu.classList.remove('open');
+        }
+    });
+
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Remove active class from all links
+            tabLinks.forEach(link => link.classList.remove('active'));
+            // Add active class to clicked link
+            this.classList.add('active');
+
+            // Hide all tab contents with transition
+            tabContents.forEach(content => {
+                content.classList.add('hidden');
+                setTimeout(() => content.classList.remove('active'), 500);
+            });
+
+            // Show the selected tab content with transition
+            const tabContent = document.querySelector(this.getAttribute('href'));
+            setTimeout(() => {
+                tabContent.classList.add('active');
+                tabContent.classList.remove('hidden');
+            }, 500);
+
+            // Hide tabs menu and reset hamburger icon
+            tabsContainer.style.transform = 'translateX(-100%)';
+            hamburgerMenu.classList.remove('open');
         });
-    }
-      
-      function goToTab(tabId) {
-        const targetTab = document.querySelector(`#${tabId}`);
-        targetTab.scrollIntoView({ behavior: 'smooth' });
-    }
-  
+    });
 
-    function toggleMenu() {
-      var menu = document.getElementById('menuItems');
-      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+    // Auto-select the first tab
+    if (tabLinks.length > 0) {
+        tabLinks[0].click();
     }
+});
 
-    function toggleTransitions() {
-      var body = document.body;
-      if (body.classList.contains('no-transitions')) {
+var acc = document.getElementsByClassName("accordion");
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.classList.remove("show");
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.classList.add("show");
+        }
+    });
+}
+
+function goToTab(tabId) {
+    const targetTab = document.querySelector(`#${tabId}`);
+    targetTab.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleMenu() {
+    var menu = document.getElementById('menuItems');
+    menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+}
+
+function toggleTransitions() {
+    var body = document.body;
+    if (body.classList.contains('no-transitions')) {
         body.classList.remove('no-transitions');
         localStorage.setItem('transitionsDisabled', 'false');
-      } else {
+    } else {
         body.classList.add('no-transitions');
         localStorage.setItem('transitionsDisabled', 'true');
-      }
-      updateToggleText();
     }
+    updateToggleText();
+}
 
-    function updateToggleText() {
-      var toggleText = document.querySelector('li[onclick="toggleTransitions()"]');
-      if (localStorage.getItem('transitionsDisabled') === 'true') {
+function updateToggleText() {
+    var toggleText = document.querySelector('li[onclick="toggleTransitions()"]');
+    if (localStorage.getItem('transitionsDisabled') === 'true') {
         toggleText.textContent = 'Ativar transições';
-      } else {
+    } else {
         toggleText.textContent = 'Desativar transições';
-      }
     }
+}
 
-    // Fechar o menu ao clicar em qualquer parte da tela
-    document.addEventListener('click', function(event) {
-      var menu = document.getElementById('menuItems');
-      if (event.target.closest('.menu') === null && menu.style.display === 'block') {
+// Fechar o menu ao clicar em qualquer parte da tela
+document.addEventListener('click', function(event) {
+    var menu = document.getElementById('menuItems');
+    if (event.target.closest('.menu') === null && menu.style.display === 'block') {
         menu.style.display = 'none';
-      }
-    });
-  
-  
-  function toggleMenu() {
-      var menu = document.getElementById('menuItems');
-      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
     }
+});
 
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                document.querySelector('.splash-screen').style.display = 'none';
-            }, 1500);
-
-            setTimeout(() => {
-                document.querySelector('.main-content').style.display = 'block';
-            }, 1500);
-
-            const hamburgerMenu = document.getElementById('hamburgerMenu');
-            const tabsContainer = document.getElementById('tabsContainer');
-            const content = document.getElementById('content');
-
-            hamburgerMenu.addEventListener('click', function() {
-                tabsContainer.style.transform = tabsContainer.style.transform === 'translateX(0%)' ? 'translateX(-100%)' : 'translateX(0%)';
-                hamburgerMenu.classList.toggle('open');
-            });
-
-            document.addEventListener('click', function(event) {
-                if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-                    tabsContainer.style.transform = 'translateX(-100%)';
-                    hamburgerMenu.classList.remove('open');
-                }
-            });
-
-            const tabLinks = document.querySelectorAll('.tab-link');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-
-                    // Remove active class from all links
-                    tabLinks.forEach(link => link.classList.remove('active'));
-                    // Add active class to clicked link
-                    this.classList.add('active');
-
-                    // Hide all tab contents with transition
-                    tabContents.forEach(content => {
-                        content.classList.add('hidden');
-                        setTimeout(() => content.classList.remove('active'), 500);
-                    });
-
-                    // Show the selected tab content with transition
-                    const tabContent = document.querySelector(this.getAttribute('href'));
-                    setTimeout(() => {
-                        tabContent.classList.add('active');
-                        tabContent.classList.remove('hidden');
-                    }, 500);
-
-                    // Hide tabs menu
-                    tabsContainer.style.transform = 'translateX(-100%)';
-                });
-            });
-
-            // Auto-select the first tab
-            if (tabLinks.length > 0) {
-                tabLinks[0].click();
-            }
-        });
-      document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-      var message = document.getElementById('welcome-message');
-      message.classList.add('show');
+        var message = document.getElementById('welcome-message');
+        message.classList.add('show');
       
-      setTimeout(function() {
-        message.classList.remove('show');
-      },3000); // Manter por 3 segundos
+        setTimeout(function() {
+            message.classList.remove('show');
+        }, 3000); // Manter por 3 segundos
     }, 2000); // Mostrar após 4 segundos
-  });
-      
-      // Função para carregar anotações salvas
+});
+
+// Função para carregar anotações salvas
 window.onload = function() {
     var notasSalvas = localStorage.getItem('anotacoes');
     if (notasSalvas) {
@@ -668,10 +676,6 @@ function limparAnotacoes() {
     document.getElementById('notepad').value = '';
     exibirMensagem('clearMessage');
 }
-
-
-      
-      
     </script>
 </body>
 </html>
