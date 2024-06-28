@@ -76,17 +76,17 @@
           color: white;
         }
 
-        .accordion::after {
-            content: '\002B'; /* Unicode character for "plus" sign (+) */
-            font-size: 16px;
-            color: white; /* Cor do símbolo */
-            transition: transform 0.3s ease; /* Adiciona transição ao símbolo (+/-) */
-        }
+.accordion::after {
+    content: '⌵'; /* Unicode character for down arrow */
+    font-size: 16px;
+    color: white; /* Cor do símbolo */
+    transition: transform 0.3s ease; /* Adiciona transição ao símbolo */
+    display: inline-block;
+}
 
-        .accordion.active::after {
-            content: "\2212"; /* Unicode character for "minus" sign (−) */
-            transform: rotate(180deg); /* Rotaciona o símbolo ao abrir */
-        }
+.accordion.active::after {
+    transform: rotate(180deg); /* Rotaciona o símbolo ao abrir */
+}
 
         .panel {
           width: 100%;
