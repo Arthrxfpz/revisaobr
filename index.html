@@ -7,8 +7,8 @@
     <style>
   textarea {
         width: 100%;
-        height: 400px;
-        padding: 2px;
+        height: 350px;
+        padding: 0px;
         font-size: 20px;
         border-radius: 5px;
         resize: none;
@@ -27,29 +27,9 @@
         cursor: pointer;
     }
     button:hover {
-        background-color: #333;
+        background-color: #616161FF;
     }
     
-  
-   .welcome-message {
-    position: fixed;
-    bottom: -100px; /* Posição inicial fora da tela, na parte inferior */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #616161FF;
-    border-radius: 10px 10px 0 0; /* Border radius na parte de baixo */
-    padding: 20px;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra para baixo */
-    transition: bottom 0.5s ease-in-out; /* Transição suave */
-    text-align: center; /* Centraliza o texto */
-    z-index: 10000;
-    color: white;
-    width: 100%;
-}
-
-.show {
-    bottom: 0px; /* Posição para mostrar o pop-up na parte inferior */
-}
   
    .accordion {
             cursor: pointer;
@@ -143,34 +123,7 @@ button a.tab-link:hover {
     color: black
         }
 
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
 
-        .popup-content p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .popup-content button {
-            margin: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: white;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-
-        .popup-content button:hover {
-            background-color: #333;
-        }
   
         body {
             margin: 0;
@@ -231,42 +184,8 @@ button a.tab-link:hover {
             display: none;
         }
 
-        .loading-screen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black;
-            animation: fadeOutLoading 0s 0s forwards;
-          overflow: hidden;
-        }
 
-        .loading-title {
-            font-size: 9em;
-            color: white;
-            animation: fadeInLoading 1s 0s ease-in-out;
-          font-family: "Roboto", sans-serif;
-          
-        }
-
-        @keyframes fadeOutLoading {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        @keyframes fadeInLoading {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+      
 
         .navbar {
             display: flex;
@@ -406,9 +325,6 @@ button a.tab-link:hover {
       cursor: pointer;
       
     }
-  
-  
-
     .menu ul li:hover {
       background-color: #f1f1f1;
     }
@@ -436,24 +352,8 @@ button a.tab-link:hover {
 </head>
 <body>
   
-  
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <p id="popupMessage">Uma nova versão está disponível, instale ela em:</p>
-            <button id="installBtn">Instalar</button>
-            <button id="installedBtn">Já instalei, não me mostra mais isso</button>
-            <button id="laterBtn">Depois</button>
-        </div>
-    </div>
-  
-  
-  
     <div class="splash-screen">
         <h1 class="splash-title">Revisão</h1>
-          
-    </div>
-    <div class="loading-screen">
-        <h2 class="loading-title">Carregando...</h2>
     </div>
     <div class="main-content">
         <div class="navbar">
@@ -466,8 +366,6 @@ button a.tab-link:hover {
           <div class="menu" onclick="toggleMenu()">
     <span>&vellip;</span>
     <ul id="menuItems">
-      <li onclick="reportProblem()">Relatar um problema</li>
-      <li onclick="checkVersions()">Verificar versões</li>
        <li onclick="toggleTransitions()">Desativar transições</li>
     </ul>
             
@@ -501,9 +399,7 @@ button a.tab-link:hover {
                 <p> Verifique a matéria aqui em baixo!</p>
                 <button style="background-color: white; color: black; padding: 5px; border-radius: 15px;">
     <a href="#tab2" class="tab-link" style="text-decoration: none; color: inherit;">Matemática</a>
-</button>
-
-                
+                </button>
               </div>
               
               <div class="square">
@@ -511,7 +407,6 @@ button a.tab-link:hover {
                 
                 <h4> Aviso oficial mandado pela professora Laisa dia 26/06/2024.</h4>
                 <p>
-
 Conforme a coordenadora Sabrina falou nas turmas, amanhã e sexta-feira estaremos em <b>CONSELHO DE CLASSE.</b> <br> <br>
 
 Trata-se de um Conselho de Classe Participativo, ou seja, participarão as lideranças (líder e vice-líder) das turmas, além dos professores e equipe gestora da escola. <br> <br>Na quinta-feira estarão presentes as lideranças do oitavo ano e na sexta as lideranças do nono ano.<br><br>
@@ -519,7 +414,6 @@ Trata-se de um Conselho de Classe Participativo, ou seja, participarão as lider
 Líder e vice-líder, por gentileza, estejam na escola <b>SEXTA-FEIRA às 8h15</b>. Vocês estarão dispensados após a participação das lideranças, ok?<br> <br>
 
 Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Conselho.
-                  
                 </p>
               </div>
               
@@ -529,20 +423,16 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
             ⮕ Nós fizemos um aplicativo mobile para celular, para facilitar na hora de estudar para a prova, uma interface super rapida e alterada.<br> <br>
             ⮕ Você pode receber notificações quando um novo conteúdo ficar disponivel, e conferir aqui!<br> <br>
             ⮕Um aviso, esse aplicativo não funciona sem internet pois ele usa um servidor leve e não consome memória do dispositivo atual. <br> <br>
-          
         </p>
-                
     </div>
               <div class="square">
                 <h1>Sugestões</h1>
                 <h4> Talvez você esteja a procura de:</h4>
-                
                 <button class="accordion">Horário 9°Ano B</button>
 <div class="panel">
        <div class="image-container">
         <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png" alt="Horarios 9 ano B">
        </div>
-             
     </div>
               </div>
               <div class="square">
@@ -555,10 +445,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
             </div>
           <!--Começo da div de matematica-->
             <div id="tab2" class="tab-content hidden">
-            
               <div class="square">
-                
-                
                 <h1> Matemática</h1> <br>
                 <h2> Conteúdos do teste de matemática</h2>
                 <p> O que sabemos é que vai ter um teste, porem ele ainda não tem data mas sabemos o conteúdo.</p>
@@ -654,29 +541,15 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         });
     }
       
-      
-      
-      
       function goToTab(tabId) {
         const targetTab = document.querySelector(`#${tabId}`);
         targetTab.scrollIntoView({ behavior: 'smooth' });
     }
   
-  
 
     function toggleMenu() {
       var menu = document.getElementById('menuItems');
       menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
-    }
-
-    function reportProblem() {
-      // Redirecionar para o link de relatar problema
-      window.location.href = 'https://seulinkdereportarproblema.com';
-    }
-
-    function checkVersions() {
-      // Redirecionar para o link de verificar versões
-      window.location.href = 'https://seulinkdeverificarversoes.com';
     }
 
     function toggleTransitions() {
@@ -714,34 +587,12 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
       menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
     }
 
-    function reportProblem() {
-      // Redirecionar para o link de relatar problema
-      window.location.href = 'https://wa.me/qr/7G7URW4BDJT2F1';
-    }
-
-    function checkVersions() {
-      // Redirecionar para o link de verificar versões
-      window.location.href = 'https://www.mediafire.com/folder/qpuyyl1xwj56m/Revisao';
-    }
-
-    // Fechar o menu ao clicar em qualquer parte da tela
-    document.addEventListener('click', function(event) {
-      var menu = document.getElementById('menuItems');
-      if (event.target.closest('.menu') === null && menu.style.display === 'block') {
-        menu.style.display = 'none';
-      }
-    });
-  
-  
-  
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 document.querySelector('.splash-screen').style.display = 'none';
-                document.querySelector('.loading-screen').style.display = 'flex';
             }, 1500);
 
             setTimeout(() => {
-                document.querySelector('.loading-screen').style.display = 'none';
                 document.querySelector('.main-content').style.display = 'block';
             }, 1500);
 
