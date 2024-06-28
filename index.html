@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
     <style>
+  /* Quadrado das anotações */
   textarea {
         width: 100%;
         height: 350px;
@@ -16,6 +17,8 @@
       color: white;
     outline: none; /* Adiciona esta linha para remover a marcação de foco */
     }
+  
+  /* botão das anotações */
     button {
         padding: 10px 20px;
         font-size: 16px;
@@ -26,11 +29,13 @@
         margin-top: 10px;
         cursor: pointer;
     }
+  
+  /* botão das anotações ativado */
     button:hover {
         background-color: #616161FF;
     }
-    
   
+    /* menu acolhivel */
    .accordion {
             cursor: pointer;
             padding: 18px;
@@ -109,21 +114,6 @@ button a.tab-link:hover {
     background-color: white;
     color: white;
 }
-  .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-    z-index: 9999;
-    color: black
-        }
-
-
   
         body {
             margin: 0;
@@ -488,7 +478,8 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
                   <br>
                   <h3> Explicação</h3>
                   <p> Primeiro você precisa fazer a fatoração dos coeficientes(número fora da raiz)<br> Depois de fazer a <u>Fatoração</u> você vai simplificar com os resultados e depois vai somar tudo. O exemplo acima Mostra isso. </p>
-                  
+                  <h3> Videos:</h3>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7sVFDGVUoZw?si=yArnihOmtNe2hxyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   <br>   <p>Boa Prova!</p>
               </div> 
               
@@ -680,15 +671,7 @@ function limparAnotacoes() {
     exibirMensagem('clearMessage');
 }
 
-// Função para exibir mensagem
-function exibirMensagem(id) {
-    var messageElement = document.getElementById(id);
-    messageElement.style.display = 'block';
-    setTimeout(function() {
-        messageElement.style.display = 'none';
-    }, 2500); // Limpa a mensagem após 2.5 segundos
-}
-      
+
       
       
     </script>
