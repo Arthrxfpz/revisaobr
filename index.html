@@ -7,13 +7,14 @@
     <style>
   textarea {
         width: 100%;
-        height: 200px;
-        padding: 5px;
+        height: 300px;
+        padding: 2px;
         font-size: 16px;
-        border-radius: 10px;
+        border-radius: 5px;
         resize: none;
       background: #333;
       color: white;
+    outline: none; /* Adiciona esta linha para remover a marcação de foco */
     }
     button {
         padding: 10px 20px;
@@ -542,12 +543,13 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
              
     </div>
               </div>
+              <div class="square">
               <h1> Campo para suas anotações</h1>
               <textarea id="notepad" placeholder="Digite suas anotações aqui..."></textarea><br>
 <button onclick="salvarAnotacoes()">Salvar</button>
 <button onclick="limparAnotacoes()">Limpar</button>
 
-
+              </div>
             </div>
           <!--Começo da div de matematica-->
             <div id="tab2" class="tab-content hidden">
