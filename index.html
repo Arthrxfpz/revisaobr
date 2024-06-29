@@ -540,23 +540,24 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         </div>
     </div>
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
+    // Esconde a tela de carregamento e exibe o conteúdo principal após 2 segundos
     setTimeout(() => {
         document.querySelector('.splash-screen').style.display = 'none';
-    }, 2000);
-
-    setTimeout(() => {
         document.querySelector('.main-content').style.display = 'block';
     }, 2000);
 
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const tabsContainer = document.getElementById('tabsContainer');
 
+    // Alterna o menu de abas ao clicar no ícone de menu
     hamburgerMenu.addEventListener('click', function() {
-        tabsContainer.style.transform = tabsContainer.style.transform === 'translateX(0%)' ? 'translateX(-100%)' : 'translateX(0%)';
-        hamburgerMenu.classList.toggle('open');
+        const isOpen = tabsContainer.style.transform === 'translateX(0%)';
+        tabsContainer.style.transform = isOpen ? 'translateX(-100%)' : 'translateX(0%)';
+        hamburgerMenu.classList.toggle('open', !isOpen);
     });
 
+    // Fecha o menu de abas ao clicar fora dele
     document.addEventListener('click', function(event) {
         if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
             tabsContainer.style.transform = 'translateX(-100%)';
@@ -571,35 +572,34 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         link.addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Remove active class from all links
+            // Atualiza o estado das abas
             tabLinks.forEach(link => link.classList.remove('active'));
-            // Add active class to clicked link
             this.classList.add('active');
 
-            // Hide all tab contents with transition
+            // Transição para ocultar todas as abas
             tabContents.forEach(content => {
                 content.classList.add('hidden');
                 setTimeout(() => content.classList.remove('active'), 500);
             });
 
-            // Show the selected tab content with transition
+            // Mostra a aba selecionada com transição
             const tabContent = document.querySelector(this.getAttribute('href'));
             setTimeout(() => {
                 tabContent.classList.add('active');
                 tabContent.classList.remove('hidden');
             }, 500);
 
-            // Add state to history
+            // Adiciona estado ao histórico
             const tabId = this.getAttribute('href').substring(1);
             history.pushState({ tabId: tabId }, null, `#${tabId}`);
 
-            // Hide tabs menu and reset hamburger icon
+            // Fecha o menu de abas e redefine o ícone de menu
             tabsContainer.style.transform = 'translateX(-100%)';
             hamburgerMenu.classList.remove('open');
         });
     });
 
-    // Handle back button
+    // Manipula o botão de voltar do navegador
     window.addEventListener('popstate', function(event) {
         if (event.state && event.state.tabId) {
             const tabLink = document.querySelector(`a[href="#${event.state.tabId}"]`);
@@ -609,7 +609,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
         }
     });
 
-    // Auto-select the first tab
+    // Seleciona automaticamente a primeira aba ou a aba do hash da URL
     if (tabLinks.length > 0) {
         const initialTab = window.location.hash ? window.location.hash.substring(1) : tabLinks[0].getAttribute('href').substring(1);
         const initialTabLink = document.querySelector(`a[href="#${initialTab}"]`);
@@ -728,7 +728,6 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-
   
     </script>
 </body>
