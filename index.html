@@ -312,21 +312,23 @@ button a.tab-link:hover {
     }
 
     .menu ul {
+      border: 1px solid white;
+      border-radius: 10px;
       list-style-type: none;
       padding: 0;
       display: none;
       position: absolute;
       right: 0;
       background-color: #616161FF;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: max-height 0.5s ease-in-out;
     }
 
     .menu ul li {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      cursor: pointer;
-      
-    }
+    padding: 15px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    border-radius: 8px; /* ou outro valor conforme desejado */
+}
     .menu ul li:hover {
       background-color: #f1f1f1;
     }
