@@ -368,6 +368,7 @@ button a.tab-link:hover {
           <div class="menu" onclick="toggleMenu()">
     <span>&vellip;</span>
     <ul id="menuItems">
+      <li onclick="checkVersions()">Verificar versões</li>
        <li onclick="toggleTransitions()">Desativar transições</li>
     </ul>
             
@@ -687,6 +688,11 @@ function limparAnotacoes() {
     document.getElementById('notepad').value = '';
     exibirMensagem('clearMessage');
 }
+  
+      function checkVersions() {
+      // Redirecionar para o link de verificar versões
+      window.location.href = 'https://www.mediafire.com/folder/qpuyyl1xwj56m/Revisao';
+    }
     </script>
 </body>
 </html>
