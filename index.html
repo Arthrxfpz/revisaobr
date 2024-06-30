@@ -126,27 +126,8 @@ button a.tab-link:hover {
           
         }
 
-        .splash-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:white; /* Adicione a cor de fundo desejada aqui */;
-    animation: fadeOut 2s forwards;
-    overflow: hidden; /* Adiciona esta linha */
-          position: fixed; /* Fixa a posição da splash-screen na janela de visualização */
-    top: 0; /* Garante que a splash-screen esteja posicionada no topo da janela */
-    width: 100%; /* Garante que a largura da splash-screen ocupe toda a largura da janela */
-    overflow: hidden; /* Impede a rolagem do conteúdo dentro da splash-screen */
-}
+        
 
-        .splash-title {
-            font-size: 4em;
-            color: black;
-            animation: fadeIn 1s ease-in-out;
-         
-       
-        }
 
         @keyframes fadeOut {
             0% {
@@ -548,7 +529,7 @@ Reforço que <b>não haverá aula,</b> pois toda a equipe estará voltada ao Con
     setTimeout(() => {
         document.querySelector('.splash-screen').style.display = 'none';
         document.querySelector('.main-content').style.display = 'block';
-    }, 2000);
+    }, 0000);
 
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const tabsContainer = document.getElementById('tabsContainer');
