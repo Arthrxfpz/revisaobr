@@ -6,7 +6,7 @@
         font-size: 20px;
         border-radius: 5px;
         resize: none;
-      background: #333;
+      background: #272727;
       color: white;
     outline: none; /* Adiciona esta linha para remover a marcação de foco */
     }
@@ -111,7 +111,7 @@ button a.tab-link:hover {
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #222;
+            background-color: rgb(15, 15, 15);
             color: white;
             overflow-x: hidden;
            user-select: none;
@@ -154,12 +154,13 @@ button a.tab-link:hover {
         .navbar {
             display: flex;
             align-items: center;
-            background-color: #616161FF;
+            background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de opacidade */
+          backdrop-filter: blur(15px); /* Desfocando o fundo atrás do bloco */
             padding: 7px;
             position: fixed;
             width: 100%;
             z-index: 9999;
-            top: 0;
+            top: 0
         }
 
         .hamburger-menu {
@@ -203,7 +204,8 @@ button a.tab-link:hover {
             top: 40px;
             width: 300px;
             height: 100%;
-            background-color: black;
+            background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de opacidade */
+          backdrop-filter: blur(30px);
             padding-top: 10px;
             transform: translateX(-100%);
             transition: transform 0.5s;
@@ -226,13 +228,13 @@ button a.tab-link:hover {
             margin: 5px 10px;
             border: none;
             border-radius: 7px;
-          background: #363636;
+          background: #272727;
         
       
         }
 
         .tabs a:hover, .tabs a.active {
-            background-color: #696969;
+            background-color: #545454;
             transform: scale(1.03);
         }
 
@@ -247,7 +249,7 @@ button a.tab-link:hover {
 
         .tab-content {
             display: none;
-            background-color: #222;
+            background-color:rgb(15, 15, 15);
             padding: 20px;
             border-radius: 8px;
             transition: opacity 0.5s, transform 0.5s;
@@ -256,7 +258,7 @@ button a.tab-link:hover {
           flex-direction: column; /* Exibir os elementos filhos em coluna */
         }
   .square {
-    background-color: #333;
+    background-color: #212121;
     padding: 32px;
     margin-bottom: 30px;
     border-radius: 10px;
