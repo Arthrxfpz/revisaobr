@@ -840,21 +840,33 @@ if ('serviceWorker' in navigator) {
             }
 
             function updateTotalTime(visits) {
-                const totalDuration = visits.reduce((total, visit) => total + (visit.duration || 0), 0);
-                totalTimeElement.textContent = formatDuration(totalDuration);
                 setInterval(() => {
-                    const updatedTotalDuration = visits.reduce((total, visit) => total + (visit.duration || 0), 0) + Math.floor((Date.now() - visits[visits.length - 1].start) / 1000);
-                    totalTimeElement.textContent = formatDuration(updatedTotalDuration);
+                    const now = Date.now();
+                    const lastVisit = visits[visits.length - 1];
+                    if (lastVisit && !lastVisit.end) {
+                        lastVisit.duration = Math.floor((now - lastVisit.start) / 1000);
+                    }
+                    const totalDuration = visits.reduce((total, visit) => total + (visit.duration || 0), 0);
+                    totalTimeElement.textContent = formatDuration(totalDuration);
                 }, 1000);
             }
 
-            function addDaySummary(day, visits, totalDuration) {
+            function addDaySummary(day, visits, totalDuration, isCurrentDay) {
                 const summary = document.createElement('div');
                 summary.className = 'stats-container';
                 summary.innerHTML = `<div class="stats-header">${day}</div>
                                      <div class="stats-item">Visitas: ${visits}</div>
-                                     <div class="stats-item">Tempo total: ${formatDuration(totalDuration)}</div>`;
+                                     <div class="stats-item" id="day-${day.replace(/\//g, '-')}">Tempo total: ${formatDuration(totalDuration)}</div>`;
                 daySummaries.appendChild(summary);
+
+                if (isCurrentDay) {
+                    setInterval(() => {
+                        const visits = getVisitData();
+                        const visitsToday = visits.filter(visit => visit.start.toLocaleDateString() === day);
+                        const totalDurationToday = visitsToday.reduce((total, visit) => total + (visit.duration || 0), 0);
+                        document.getElementById(`day-${day.replace(/\//g, '-')}`).textContent = `Tempo total: ${formatDuration(totalDurationToday)}`;
+                    }, 1000);
+                }
             }
 
             function groupVisitsByDay(visits) {
@@ -875,29 +887,27 @@ if ('serviceWorker' in navigator) {
                 daySummaries.innerHTML = '';
                 const visitsByDay = groupVisitsByDay(visits);
                 for (const [day, data] of Object.entries(visitsByDay)) {
-                    addDaySummary(day, data.visits, data.totalDuration);
+                    addDaySummary(day, data.visits, data.totalDuration, day === new Date().toLocaleDateString());
                 }
                 updateTotalTime(visits);
             }
 
             function startTimer() {
                 let startTime = Date.now();
-                let currentDuration = 0;
                 setInterval(() => {
-                    currentDuration = Math.floor((Date.now() - startTime) / 1000);
+                    const currentDuration = Math.floor((Date.now() - startTime) / 1000);
                     currentTimeElement.textContent = formatDuration(currentDuration);
+                    saveCurrentVisitDuration(currentDuration);
                 }, 1000);
             }
 
-            function updateVisitDuration() {
+            function saveCurrentVisitDuration(duration) {
                 const visits = getVisitData();
                 if (visits.length > 0) {
                     const lastVisit = visits[visits.length - 1];
                     if (lastVisit.end === null) {
-                        lastVisit.end = Date.now();
-                        lastVisit.duration = Math.floor((lastVisit.end - lastVisit.start) / 1000);
+                        lastVisit.duration = duration;
                         saveVisitData(visits);
-                        updateStats();
                     }
                 }
             }
@@ -907,15 +917,32 @@ if ('serviceWorker' in navigator) {
                 visits.push({
                     start: Date.now(),
                     end: null,
-                    duration: null
+                    duration: 0
                 });
                 saveVisitData(visits);
                 startTimer();
                 updateStats();
             }
 
-            window.addEventListener('beforeunload', updateVisitDuration);
-            window.addEventListener('load', startNewVisit);
+            function handleVisibilityChange() {
+                if (document.visibilityState === 'hidden') {
+                    const visits = getVisitData();
+                    const lastVisit = visits[visits.length - 1];
+                    if (lastVisit && !lastVisit.end) {
+                        lastVisit.end = Date.now();
+                        lastVisit.duration = Math.floor((lastVisit.end - lastVisit.start) / 1000);
+                        saveVisitData(visits);
+                    }
+                } else if (document.visibilityState === 'visible') {
+                    startNewVisit();
+                }
+            }
+
+            window.addEventListener('beforeunload', handleVisibilityChange);
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+
+            // Iniciar nova visita ao carregar a página
+            startNewVisit();
         });
   
   
