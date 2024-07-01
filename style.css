@@ -90,10 +90,10 @@
   button a.tab-link {
     display: inline-block;
     padding: 15px 40px; /* Ajuste o padding conforme desejado */
-    background-color: white;
-    color: black;
+    background-color: #616161FF;
+    color: white;
     border: 0px solid black;
-    border-radius: 15px;
+    border-radius: 10px;
     text-decoration: none;
     text-align: center;
     font-size: 16px;
@@ -104,7 +104,7 @@
 }
 
 button a.tab-link:hover {
-    background-color: white;
+    background-color: #616161FF;
     color: white;
 }
   
