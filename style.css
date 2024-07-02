@@ -34,7 +34,7 @@
             padding: 18px;
             width: 100%;
             text-align: left;
-            border: 1px solid white;
+            border: 1px solid black;
             outline: none;
             transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
             background-color:white /* Cor do Recolhivel */
@@ -92,8 +92,8 @@
     padding: 15px 40px; /* Ajuste o padding conforme desejado */
     background-color: #1C1C1C;
     color: white;
-    border: 1px solid white;
-    border-radius: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
     text-decoration: none;
     text-align: center;
     font-size: 16px;
