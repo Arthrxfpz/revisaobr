@@ -155,10 +155,10 @@ button a.tab-link:hover {
         .navbar {
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #696969 25%, #272727 60%);
+            background: linear-gradient(to bottom, #696969 20%,#1C1C1C 80%);
         
           backdrop-filter: blur(15px); /* Desfocando o fundo atrás do bloco */
-            padding: 7px;
+            padding: 8px;
             position: fixed;
             width: 100%;
             z-index: 9999;
