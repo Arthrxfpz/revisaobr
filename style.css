@@ -15,7 +15,7 @@
     button {
         padding: 10px 20px;
         font-size: 16px;
-        background-color: #616161FF;
+        background-color: #1C1C1C;
         color: white;
         border: none;
         border-radius: 5px;
@@ -25,7 +25,7 @@
   
   /* botão das anotações ativado */
     button:hover {
-        background-color: #616161FF;
+        background-color: #1C1C1C;
     }
   
     /* menu acolhivel */
@@ -34,7 +34,7 @@
             padding: 18px;
             width: 100%;
             text-align: left;
-            border: 1px solid black;
+            border: 1px solid white;
             outline: none;
             transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
             background-color:white /* Cor do Recolhivel */
@@ -50,7 +50,7 @@
         }
 
         .accordion:hover, .accordion.active {
-            background-color:#616161FF;/* Cor de hover e ativo */
+            background-color:#1C1C1C/* Cor de hover e ativo */
           color: white;
         }
 
@@ -90,9 +90,9 @@
   button a.tab-link {
     display: inline-block;
     padding: 15px 40px; /* Ajuste o padding conforme desejado */
-    background-color: #616161FF;
+    background-color: #1C1C1C;
     color: white;
-    border: 0px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     text-decoration: none;
     text-align: center;
@@ -104,7 +104,7 @@
 }
 
 button a.tab-link:hover {
-    background-color: #616161FF;
+    background-color: #1C1C1C;
     color: white;
 }
   
