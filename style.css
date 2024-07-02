@@ -155,7 +155,8 @@ button a.tab-link:hover {
         .navbar {
             display: flex;
             align-items: center;
-            background: #616161FF;
+            background: linear-gradient(200deg, #272727,#696969);
+            background-size: 200% 200%;
           backdrop-filter: blur(15px); /* Desfocando o fundo atrás do bloco */
             padding: 7px;
             position: fixed;
