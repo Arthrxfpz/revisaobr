@@ -15,7 +15,7 @@
     button {
         padding: 10px 20px;
         font-size: 16px;
-        background-color:  #272727;
+        background-color:  #616161;
         color: white;
         border: none;
         border-radius: 5px;
@@ -25,7 +25,7 @@
   
   /* botão das anotações ativado */
     button:hover {
-        background-color:  #272727;
+        background-color:  #616161;
     }
   
     /* menu acolhivel */
@@ -33,8 +33,8 @@
             cursor: pointer;
             padding: 18px;
             width: 100%;
-            text-align: left;
-            border: 1px solid white;
+            text-align: center;
+            border: 2px solid #616161;
             outline: none;
             transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
             background-color:white /* Cor do Recolhivel */
@@ -50,7 +50,7 @@
         }
 
         .accordion:hover, .accordion.active {
-            background-color:#1C1C1C/* Cor de hover e ativo */
+            background-color: #616161/* Cor de hover e ativo */
           color: white;
         }
 
@@ -89,22 +89,22 @@
         }
   button a.tab-link {
     display: inline-block;
-    padding: 15px 40px; /* Ajuste o padding conforme desejado */
-    background-color:  #272727;
+    padding: 20px 40px; /* Ajuste o padding conforme desejado */
+    background-color: #616161;
     color: white;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 200px; /* Ajuste a largura conforme desejado */
+    width: 100%; /* Ajuste a largura conforme desejado */
     outline: none; /* Remove a borda ao redor do botão */
     margin: 0 auto; /* Centraliza o botão horizontalmente */
 }
 
 button a.tab-link:hover {
-    background-color:  #272727;
+    background-color:  #616161;
     color: white;
 }
   
@@ -297,7 +297,7 @@ button a.tab-link:hover {
       display: none;
       position: absolute;
       right: 0;
-      background-color: #616161FF;
+      background-color: #272727;
       transition: max-height 0.5s ease-in-out;
     }
 
@@ -359,7 +359,7 @@ button a.tab-link:hover {
             opacity: 1;
         }
         .stats-modal-content {
-            background: black;
+           background:#1C1C1C;
             padding: 20px;
             border-radius: 8px;
             width: 80%;
@@ -391,7 +391,7 @@ button a.tab-link:hover {
             right: 10px;
         }
         .stats-container {
-            background: black;
+            background: 1C1C1C;
             border: 1px solid #ccc;
             padding: 15px;
             margin: 10px 0;
