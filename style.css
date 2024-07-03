@@ -256,7 +256,7 @@ button a.tab-link:hover {
             border-radius: 0px;
             transition: opacity 0.5s, transform 0.5s;
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
         }
   .square {
@@ -353,6 +353,7 @@ button a.tab-link:hover {
             transition: opacity 0.3s ease-in-out;
             opacity: 0;
           z-index:99999;
+          overflow-y: scroll; /* Permite rolagem vertical */
         }
         .stats-modal.show {
             display: flex;

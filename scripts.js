@@ -323,5 +323,38 @@ if ('serviceWorker' in navigator) {
             // Iniciar nova visita ao carregar a página
             startNewVisit();
         });
+      
+      
+      
+      function startCountdown(elementId, endDate) {
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                if (distance < 0) {
+                    document.getElementById(elementId).innerHTML = "A Prova Já foi Iniciada";
+                    clearInterval(interval);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            updateCountdown();
+            const interval = setInterval(updateCountdown, 1000);
+        }
+
+        const event1Date = new Date("2024-07-10T10:10:00").getTime();
+        const event2Date = new Date("2024-11-01T00:00:00").getTime();
+        const event3Date = new Date("2024-08-15T00:00:00").getTime();
+
+        startCountdown("countdown1", event1Date);
+        startCountdown("countdown2", event2Date);
+        startCountdown("countdown3", event3Date);
   
   
