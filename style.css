@@ -331,17 +331,3 @@ button a.tab-link:hover {
 }
   
           
-.provas-passadas-button {
-            background-color: #616161;
-  width:300px;
-            color: white;
-            padding: 20px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-  z-index: 99999;
-        }
-        
