@@ -353,7 +353,7 @@ button a.tab-link:hover {
             transition: opacity 0.3s ease-in-out;
             opacity: 0;
           z-index:99999;
-          overflow-y: scroll; /* Permite rolagem vertical */
+          overflow-y: scroll;
         }
         .stats-modal.show {
             display: flex;
@@ -409,3 +409,5 @@ button a.tab-link:hover {
             margin-bottom: 5px;
             font-size: 14px;
         }
+
+
