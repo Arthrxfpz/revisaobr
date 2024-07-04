@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provas Passadas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background-color: rgb(15, 15, 15);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 5px;
+            background: linear-gradient(to bottom, #616161FF 30%,#1C1C1C 90%);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .post-container {
+            background-color: #272727;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .post-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-container h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .post-container p {
+            margin-bottom: 0;
+        }
+
+        .exit-button {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #272727;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+           
+        }
+
+        .exit-button:hover {
+            background-color: #272727;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Provas Passadas</h1>
+        <a href="Index.html" class="exit-button">Sair</a>
+    </header>
+    <main>
+        <div class="post-container">
+            <h2>Sem Provas Passadas</h2>
+            <p>Volte Aqui Quando tiver uma disponivel!</p>
+        </div>
+        
+        <!-- Adicione mais contêineres de post conforme necessário -->
+    </main>
+</body>
+</html>
