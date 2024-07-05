@@ -205,7 +205,7 @@ if ('serviceWorker' in navigator) {
         }
 
         const event1Date = new Date("2024-07-10T10:10:00").getTime();
-        const event2Date = new Date("2024-11-01T00:00:00").getTime();
+        const event2Date = new Date("2024-07-12T07:40:00").getTime();
         const event3Date = new Date("2024-08-15T00:00:00").getTime();
 
         startCountdown("countdown1", event1Date);
