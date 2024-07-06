@@ -87,9 +87,18 @@
         .panel p {
             margin: 10px 0;
         }
-  button a.tab-link {
-    display: inline-block;
-    padding: 15px 40px; /* Ajuste o padding conforme desejado */
+  .full-width-button {
+    background-color: #1C1C1C;
+    color: white;
+    padding: 1px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+}
+
+button a.tab-link {
+    display: block; /* Isso faz com que o link ocupe 100% da largura do botão */
+    padding: 20px 40px; /* Ajuste o padding conforme desejado */
     background-color: #616161;
     color: white;
     border: 1px solid black;
@@ -98,16 +107,16 @@
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 250px; /* Ajuste a largura conforme desejado */
+    width: 100%; /* O link ocupará 100% da largura do botão */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
     outline: none; /* Remove a borda ao redor do botão */
-    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    margin: 0; /* Remove a margem do link */
 }
 
 button a.tab-link:hover {
-    background-color:  #616161;
+    background-color: #616161;
     color: white;
 }
-  
         body {
             margin: 0;
             font-family: Arial, sans-serif;
