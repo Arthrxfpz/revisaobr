@@ -1,3 +1,43 @@
+// Função para verificar o horário do dispositivo
+        async function verificarHora() {
+            try {
+                // Obter a hora atual de São Paulo via World Time API
+                const response = await fetch('http://worldtimeapi.org/api/timezone/America/Sao_Paulo');
+                const data = await response.json();
+                
+                // Obter a hora atual do dispositivo
+                const horaAtual = new Date();
+                const horaSP = new Date(data.datetime);
+
+                // Calcular a diferença em milissegundos
+                const diferenca = Math.abs(horaAtual - horaSP);
+
+                // Limite de 5 minutos (300000 milissegundos)
+                const limiteDiferenca = 300000;
+
+                // Verificar se a diferença é maior que o limite
+                if (diferenca > limiteDiferenca) {
+                    // Exibir a mensagem de aviso
+                    document.getElementById('overlay').style.display = 'flex';
+                } else {
+                    // Esconder a mensagem caso a hora esteja correta
+                    document.getElementById('overlay').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Erro ao verificar hora:', error);
+            }
+        }
+
+        // Chamar a função verificarHora a cada segundo
+        setInterval(verificarHora, 1000);
+
+        // Chamar a função ao carregar a página
+        window.addEventListener('load', verificarHora);
+    
+  
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Esconde a tela de carregamento e exibe o conteúdo principal após 2 segundos
     setTimeout(() => {
@@ -211,5 +251,8 @@ if ('serviceWorker' in navigator) {
         startCountdown("countdown1", event1Date);
         startCountdown("countdown2", event2Date);
         startCountdown("countdown3", event3Date);
+
+
+
   
   
