@@ -1,42 +1,3 @@
-// Função para verificar o horário do dispositivo
-        async function verificarHora() {
-            try {
-                // Obter a hora atual de São Paulo via World Time API
-                const response = await fetch('http://worldtimeapi.org/api/timezone/America/Sao_Paulo');
-                const data = await response.json();
-                
-                // Obter a hora atual do dispositivo
-                const horaAtual = new Date();
-                const horaSP = new Date(data.datetime);
-
-                // Calcular a diferença em milissegundos
-                const diferenca = Math.abs(horaAtual - horaSP);
-
-                // Limite de 5 minutos (300000 milissegundos)
-                const limiteDiferenca = 300000;
-
-                // Verificar se a diferença é maior que o limite
-                if (diferenca > limiteDiferenca) {
-                    // Exibir a mensagem de aviso
-                    document.getElementById('overlay').style.display = 'flex';
-                } else {
-                    // Esconder a mensagem caso a hora esteja correta
-                    document.getElementById('overlay').style.display = 'none';
-                }
-            } catch (error) {
-                console.error('Erro ao verificar hora:', error);
-            }
-        }
-
-        // Chamar a função verificarHora a cada segundo
-        setInterval(verificarHora, 1000);
-
-        // Chamar a função ao carregar a página
-        window.addEventListener('load', verificarHora);
-    
-  
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     // Esconde a tela de carregamento e exibe o conteúdo principal após 2 segundos
@@ -205,21 +166,6 @@ function checkVersions() {
     window.location.href = 'https://wa.me/?text=Instale%20o%20aplicativo%20Revisão%20para%20não%20perder%20a%20matéria:%20https%3A%2F%2Fwww.mediafire.com%2Ffolder%2Fqpuyyl1xwj56m%2FRevisao';
 }
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-            console.log('Service Worker registrado com sucesso:', registration);
-        }, function(error) {
-            console.log('Falha ao registrar o Service Worker:', error);
-        });
-
-        navigator.serviceWorker.addEventListener('message', function(event) {
-            if (event.data === 'cached') {
-                document.getElementById('message').textContent = 'O conteúdo foi salvo no cache!';
-            }
-        });
-    });
-}
 
       function startCountdown(elementId, endDate) {
             function updateCountdown() {
