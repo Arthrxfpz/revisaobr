@@ -10,12 +10,8 @@
      
     
     <div class="splash-screen">
-        <h1 class="splash-title">Revisão</h1>
+        <h1 class="splash-title">Carregando...</h1>
     </div>
-  <div class="overlay" id="overlay">
-    <h5> AVISO <br> <br> Nosso sistema detectou que a data ou hora do seu aparelho está incorreta. Com isso, Poderá prejudicar nossos serviços do aplicativo. Por favor arrume corretamente nas configurações. </h5>
-   
-        
     </div>
     <div class="main-content">
         <div class="navbar">
@@ -28,9 +24,9 @@
           <div class="menu" onclick="toggleMenu()">
     <span>&vellip;</span>
     <ul id="menuItems">
-      <li onclick="checkVersions()">Verificar versões</li>
-<li onclick="novoLink()">Compartilhar</li>
-       <li onclick="toggleTransitions()">Desativar transições</li>
+      <li onclick="checkVersions()">Atualizações</li>
+<li onclick="novoLink()">Compartilhar aplicativo</li>
+       <li onclick="toggleTransitions()">Desativar transicões</li>
     
             
     </ul>        
@@ -104,7 +100,29 @@
               <h1>Anotações</h1>
               <textarea id="notepad" placeholder="Digite Aqui..."></textarea><br>
 <button onclick="salvarAnotacoes()">Salvar</button>
-<button onclick="limparAnotacoes()">Limpar</button>
+<button onclick="limparAnotacoes()">Apagar</button>
+              
+                 <div class="control-panel">
+<button onclick="document.getElementById('textColor').click()">Escolher Cor do Texto</button>
+<input type="color" id="textColor" onchange="mudarCorDoTexto()" style="display: none;">
+
+        <button onclick="abrirSelecionadorDeFonte()">Escolher Fonte do Texto</button>
+<label for="textFont" style="display: none;">Fonte do Texto:</label>
+<select id="textFont" onchange="mudarFonteDoTexto()" style="display: none;">
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Tahoma">Tahoma</option>
+    <option value="Impact">Impact</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <!-- Mais fontes adicionadas -->
+    <option value="Palatino Linotype">Palatino Linotype</option>
+    <option value="Lucida Console">Lucida Console</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Book Antiqua">Book Antiqua</option>
+</select>
 
               </div>
             </div>

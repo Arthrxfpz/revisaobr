@@ -356,3 +356,10 @@ button a.tab-link:hover {
     box-sizing: border-box; /* Garante que o padding seja contabilizado no width e height */
 }
 
+#notepad {
+            width: 100%;
+            height: 300px;
+        }
+        .control-panel {
+            margin-top: 10px;
+        }
