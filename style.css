@@ -72,7 +72,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out; /* Transição suave ao abrir/fechar */
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             background-color: #333; /* Cor de fundo do conteúdo */
@@ -85,7 +85,7 @@
         }
 
         .panel p {
-            margin: 10px 0;
+            margin: 20px 0;
         }
   .full-width-button {
     background-color: #1C1C1C;
@@ -355,3 +355,4 @@ button a.tab-link:hover {
     padding: 20px; /* Adicione um padding para garantir que o texto não encoste nas bordas */
     box-sizing: border-box; /* Garante que o padding seja contabilizado no width e height */
 }
+
