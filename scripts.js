@@ -133,28 +133,11 @@ document.addEventListener('click', function(event) {
         menu.style.display = 'none';
     }
 });
-
-
-// Função para carregar anotações salvas, cor do texto e fonte do texto
+// Função para carregar anotações salvas
 window.onload = function() {
-    // Carregar anotações salvas
     var notasSalvas = localStorage.getItem('anotacoes');
     if (notasSalvas) {
         document.getElementById('notepad').value = notasSalvas;
-    }
-
-    // Carregar cor do texto salva
-    var corTextoSalva = localStorage.getItem('corTexto');
-    if (corTextoSalva) {
-        document.getElementById('notepad').style.color = corTextoSalva;
-        document.getElementById('textColor').value = corTextoSalva; // Atualiza o seletor de cor com a cor salva
-    }
-
-    // Carregar fonte do texto salva
-    var fonteTextoSalva = localStorage.getItem('fonteTexto');
-    if (fonteTextoSalva) {
-        document.getElementById('notepad').style.fontFamily = fonteTextoSalva;
-        document.getElementById('textFont').value = fonteTextoSalva; // Atualiza o seletor de fonte com a fonte salva
     }
 }
 
@@ -180,27 +163,6 @@ function exibirMensagem(id) {
         mensagem.style.display = 'none';
     }, 2000); // Oculta a mensagem após 2 segundos
 }
-
-// Função para mudar a cor do texto
-function mudarCorDoTexto() {
-    var cor = document.getElementById('textColor').value;
-    document.getElementById('notepad').style.color = cor;
-    localStorage.setItem('corTexto', cor); // Salva a cor do texto no localStorage
-}
-
-// Função para abrir o selecionador de fonte
-function abrirSelecionadorDeFonte() {
-    var selecionador = document.getElementById('textFont');
-    selecionador.style.display = 'block';
-    document.querySelector('label[for="textFont"]').style.display = 'block';
-}
-
-// Função para mudar a fonte do texto
-function mudarFonteDoTexto() {
-    var fonte = document.getElementById('textFont').value;
-    document.getElementById('notepad').style.fontFamily = fonte;
-    localStorage.setItem('fonteTexto', fonte); // Salva a fonte do texto no localStorage
-}
 function checkVersions() {
     // Redirecionar para o link de verificar versões
     window.location.href = 'https://www.mediafire.com/folder/qpuyyl1xwj56m/Revisao';
@@ -212,37 +174,45 @@ function checkVersions() {
 
 
       function startCountdown(elementId, endDate) {
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = endDate - now;
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
 
-                if (distance < 0) {
-                    document.getElementById(elementId).innerHTML = "A Prova Já foi Iniciada";
-                    clearInterval(interval);
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }
-
-            updateCountdown();
-            const interval = setInterval(updateCountdown, 1000);
+        if (distance < 0) {
+            document.getElementById(elementId).innerHTML = "A Prova Já foi Iniciada";
+            clearInterval(interval);
+            return;
         }
 
-        const event1Date = new Date("2024-07-10T10:10:00").getTime();
-        const event2Date = new Date("2024-07-12T07:40:00").getTime();
-        const event3Date = new Date("2024-08-15T00:00:00").getTime();
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        startCountdown("countdown1", event1Date);
-        startCountdown("countdown2", event2Date);
-        startCountdown("countdown3", event3Date);
+        let countdownString = "";
 
+        if (days > 0) {
+            countdownString += `${days}d `;
+        }
+        if (days > 0 || hours > 0) {
+            countdownString += `${hours}h `;
+        }
+        if (days > 0 || hours > 0 || minutes > 0) {
+            countdownString += `${minutes}m `;
+        }
+        countdownString += `${seconds}s`;
 
+        document.getElementById(elementId).innerHTML = countdownString;
+    }
 
-  
-  
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+}
+
+const event1Date = new Date("2024-07-10T10:10:00").getTime();
+const event2Date = new Date("2024-07-12T07:40:00").getTime();
+const event3Date = new Date("2024-08-15T00:00:00").getTime();
+
+startCountdown("countdown1", event1Date);
+startCountdown("countdown2", event2Date);
+startCountdown("countdown3", event3Date);
