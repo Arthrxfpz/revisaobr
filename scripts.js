@@ -1,3 +1,4 @@
+const overlay = document.getElementById('overlay');
 
 document.addEventListener('DOMContentLoaded', function() {
     // Esconde a tela de carregamento e exibe o conteúdo principal após 2 segundos
@@ -25,8 +26,16 @@ function closeMenu(event) {
     if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
         tabsContainer.style.transform = 'translateX(-100%)';
         hamburgerMenu.classList.remove('open');
+        document.body.classList.remove('menu-open'); // Remove a classe que impede a rolagem
     }
 }
+
+// Abre o menu de abas
+hamburgerMenu.addEventListener('click', function() {
+    tabsContainer.style.transform = 'translateX(0)';
+    hamburgerMenu.classList.add('open');
+    document.body.classList.add('menu-open'); // Adiciona uma classe para impedir a rolagem
+});
 
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');

@@ -221,8 +221,7 @@ button a.tab-link:hover {
             transform: translateX(-100%);
             transition: transform 0.4s;
             z-index: 999;
-        
-          overflow-y: auto; /* Adiciona rolagem vertical */
+          
         }
 
         .tabs {
@@ -339,22 +338,7 @@ button a.tab-link:hover {
     display: block;
 }
   
-          .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(15, 15, 15);
-    color: white;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem; /* Ajuste o tamanho da fonte conforme necessário */
-    z-index: 9999;
-    padding: 20px; /* Adicione um padding para garantir que o texto não encoste nas bordas */
-    box-sizing: border-box; /* Garante que o padding seja contabilizado no width e height */
-}
+        
 
 #notepad {
             width: 100%;
@@ -363,3 +347,8 @@ button a.tab-link:hover {
         .control-panel {
             margin-top: 10px;
         }
+
+.menu-open {
+    overflow: hidden;
+}
+
