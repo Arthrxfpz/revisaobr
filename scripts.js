@@ -16,13 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerMenu.classList.toggle('open', !isOpen);
     });
 
-    // Fecha o menu de abas ao clicar fora dele
-    document.addEventListener('click', function(event) {
-        if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            tabsContainer.style.transform = 'translateX(-100%)';
-            hamburgerMenu.classList.remove('open');
-        }
-    });
+    // Fecha o menu de abas ao clicar, tocar ou deslizar fora dele
+document.addEventListener('click', closeMenu);
+document.addEventListener('touchstart', closeMenu);
+document.addEventListener('touchmove', closeMenu);
+
+function closeMenu(event) {
+    if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        tabsContainer.style.transform = 'translateX(-100%)';
+        hamburgerMenu.classList.remove('open');
+    }
+}
 
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
