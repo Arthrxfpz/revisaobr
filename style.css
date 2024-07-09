@@ -261,19 +261,19 @@ button a.tab-link:hover {
         .tab-content {
             display: none;
             background-color:rgb(15, 15, 15);
-            padding: 5px;
+            padding: 3px;
             border-radius: 0px;
-            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 0.5s, transform 0.3s;
             width: 100%;
-            max-width: 1000px;
+            max-width: 500px;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
         }
   .square {
     background-color: #212121;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px black; /* sombra leve */
+    box-shadow: 0 0 5px black; /* sombra leve */
 }
 
         .tab-content.active {
