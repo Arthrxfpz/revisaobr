@@ -351,4 +351,12 @@ button a.tab-link:hover {
 .menu-open {
     overflow: hidden;
 }
+#corTexto {
+    display: none; /* Oculta o seletor de cor */
+}
+/* Remover a borda laranja ao focar nos elementos */
+select:focus, input[type="number"]:focus {
+    outline: none;
+    border: none; /* Isso remove a borda de todos os lados */
+}
 

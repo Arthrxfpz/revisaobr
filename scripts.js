@@ -146,28 +146,85 @@ document.addEventListener('click', function(event) {
         menu.style.display = 'none';
     }
 });
-// Função para carregar anotações salvas
+// Função para carregar configurações salvas
 window.onload = function() {
     var notasSalvas = localStorage.getItem('anotacoes');
     if (notasSalvas) {
         document.getElementById('notepad').value = notasSalvas;
     }
+    
+    var corSalva = localStorage.getItem('corTexto');
+    if (corSalva) {
+        document.getElementById('notepad').style.color = corSalva;
+        document.getElementById('corTexto').value = corSalva;
+    }
+    
+    var fonteSalva = localStorage.getItem('fonteSelecionada');
+    if (fonteSalva) {
+        document.getElementById('notepad').style.fontFamily = fonteSalva;
+        document.getElementById('fonte').value = fonteSalva;
+    }
+    
+    var tamanhoFonteSalvo = localStorage.getItem('tamanhoFonte');
+    if (tamanhoFonteSalvo) {
+        document.getElementById('notepad').style.fontSize = tamanhoFonteSalvo + 'px';
+        document.getElementById('tamanhoFonte').value = tamanhoFonteSalvo;
+    }
 }
 
-// Função para salvar anotações
+// Função para salvar configurações
 function salvarAnotacoes() {
     var anotacoes = document.getElementById('notepad').value;
     localStorage.setItem('anotacoes', anotacoes);
+    
+    var cor = document.getElementById('corTexto').value;
+    localStorage.setItem('corTexto', cor);
+    
+    var fonteSelecionada = document.getElementById('fonte').value;
+    localStorage.setItem('fonteSelecionada', fonteSelecionada);
+    
+    var tamanhoFonte = document.getElementById('tamanhoFonte').value;
+    localStorage.setItem('tamanhoFonte', tamanhoFonte);
+    
     exibirMensagem('saveMessage');
 }
 
-// Função para limpar anotações
+// Função para limpar configurações
 function limparAnotacoes() {
     localStorage.removeItem('anotacoes');
+    localStorage.removeItem('corTexto');
+    localStorage.removeItem('fonteSelecionada');
+    localStorage.removeItem('tamanhoFonte'); // Remover o tamanho da fonte salvo também ao limpar
     document.getElementById('notepad').value = '';
+    document.getElementById('notepad').style.color = ''; // Resetar a cor do texto
+    document.getElementById('notepad').style.fontFamily = ''; // Resetar a fonte
+    document.getElementById('notepad').style.fontSize = ''; // Resetar o tamanho da fonte
+    document.getElementById('corTexto').value = '#000000'; // Resetar o valor do seletor de cor
+    document.getElementById('fonte').value = 'Arial'; // Resetar o valor do seletor de fonte
+    document.getElementById('tamanhoFonte').value = '14'; // Resetar o valor do seletor de tamanho da fonte
     exibirMensagem('clearMessage');
 }
 
+// Função para mudar a cor do texto
+function mudarCorTexto() {
+    var cor = document.getElementById('corTexto').value;
+    document.getElementById('notepad').style.color = cor;
+    localStorage.setItem('corTexto', cor); // Salvar a cor no localStorage
+}
+
+// Função para mudar a fonte
+function mudarFonte() {
+    var fonteSelecionada = document.getElementById('fonte').value;
+    document.getElementById('notepad').style.fontFamily = fonteSelecionada;
+    localStorage.setItem('fonteSelecionada', fonteSelecionada); // Salvar a fonte no localStorage
+}
+
+// Função para mudar o tamanho da fonte
+function mudarTamanhoFonte() {
+    var tamanhoFonte = document.getElementById('tamanhoFonte').value;
+    document.getElementById('notepad').style.fontSize = tamanhoFonte + 'px';
+    localStorage.setItem('tamanhoFonte', tamanhoFonte); // Salvar o tamanho da fonte no localStorage
+}
 // Função para exibir mensagens
 function exibirMensagem(id) {
     var mensagem = document.getElementById(id);
