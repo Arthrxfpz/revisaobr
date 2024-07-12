@@ -279,11 +279,11 @@ function checkVersions() {
     const interval = setInterval(updateCountdown, 1000);
 }
 
-const event1Date = new Date("2024-08-15T10:10:00").getTime();
-const event2Date = new Date("2024-07-12T07:40:00").getTime();
+const event1Date = new Date("2024-08-23T10:10:00").getTime(); // Prova de Geografia
+const event2Date = new Date("2024-08-23T07:40:00").getTime();
 const event3Date = new Date("2024-08-15T00:00:00").getTime();
 
-
+startCountdown("countdown1", event1Date);
 startCountdown("countdown2", event2Date);
 startCountdown("countdown3", event3Date);
 
