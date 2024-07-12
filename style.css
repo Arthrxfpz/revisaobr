@@ -164,7 +164,7 @@ button a.tab-link:hover {
         .navbar {
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #616161FF 20%,#1C1C1C 90%);
+            background: linear-gradient(to bottom, #616161FF 10%,#1C1C1C 90%);
         
           backdrop-filter: blur(15px); /* Desfocando o fundo atrás do bloco */
             padding: 8px;
