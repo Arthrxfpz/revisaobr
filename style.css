@@ -364,3 +364,47 @@ select:focus, input[type="number"]:focus {
   background: #616161;
 }
 
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: block;
+  }
+  nav {
+    background-color:none;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+  }
+  nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  section {
+    padding: 20px;
+    margin: 20px;
+    background-color: none;
+    border: 0px solid #ddd;
+  }
+  /* Rolagem suave */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Efeito de piscar */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .blink {
+    animation: blink 1s ease-in-out;
+  }
