@@ -1,28 +1,5 @@
 const overlay = document.getElementById('overlay');
 document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('nav a');
-
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1); // remove o #
-      const targetSection = document.getElementById(targetId);
-
-      // Adiciona a classe de piscar à seção alvo
-      targetSection.classList.add('blink');
-
-      // Remove a classe de piscar após 1 segundo (1000 milissegundos)
-      setTimeout(function() {
-        targetSection.classList.remove('blink');
-      }, 1000);
-
-      // Rola suavemente até a seção alvo
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
     // Esconde a tela de carregamento e exibe o conteúdo principal após 2 segundos
     setTimeout(() => {
         document.querySelector('.splash-screen').style.display = 'none';
@@ -39,25 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerMenu.classList.toggle('open', !isOpen);
     });
 
-    // Fecha o menu de abas ao clicar, tocar ou deslizar fora dele
-document.addEventListener('click', closeMenu);
-document.addEventListener('touchstart', closeMenu);
-document.addEventListener('touchmove', closeMenu);
-
-function closeMenu(event) {
-    if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-        tabsContainer.style.transform = 'translateX(-100%)';
-        hamburgerMenu.classList.remove('open');
-        document.body.classList.remove('menu-open'); // Remove a classe que impede a rolagem
-    }
-}
-
-// Abre o menu de abas
-hamburgerMenu.addEventListener('click', function() {
-    tabsContainer.style.transform = 'translateX(0)';
-    hamburgerMenu.classList.add('open');
-    document.body.classList.add('menu-open'); // Adiciona uma classe para impedir a rolagem
-});
+    // Fecha o menu de abas ao clicar fora dele
+    document.addEventListener('click', function(event) {
+        if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            tabsContainer.style.transform = 'translateX(-100%)';
+            hamburgerMenu.classList.remove('open');
+        }
+    });
 
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -114,7 +79,6 @@ hamburgerMenu.addEventListener('click', function() {
         }
     }
 });
-
 var acc = document.getElementsByClassName("accordion");
 for (var i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
