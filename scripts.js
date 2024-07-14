@@ -30,6 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
     tabLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
+            // Fecha o menu de abas ao clicar, tocar ou deslizar fora dele
+document.addEventListener('click', closeMenu);
+document.addEventListener('touchstart', closeMenu);
+document.addEventListener('touchmove', closeMenu);
+
+function closeMenu(event) {
+    if (!tabsContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        tabsContainer.style.transform = 'translateX(-100%)';
+        hamburgerMenu.classList.remove('open');
+    }
+}
 
             // Atualiza o estado das abas
             tabLinks.forEach(link => link.classList.remove('active'));
@@ -93,6 +104,11 @@ for (var i = 0; i < acc.length; i++) {
         }
     });
 }
+
+
+
+
+
 
 function goToTab(tabId) {
     const targetTab = document.querySelector(`#${tabId}`);
