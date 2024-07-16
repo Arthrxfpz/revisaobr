@@ -1,3 +1,28 @@
+.marquee-container {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+  color: white;
+        }
+
+        .marquee {
+          font-size: 10px;
+            display: block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    
+
+
+
+
+
+
 /* Quadrado das anotações */
   textarea {
         width: 100%;
@@ -263,15 +288,16 @@ button a.tab-link:hover {
             border-radius: 0px;
             transition: opacity 0.6s, transform 0.3s;
             width: 100%;
-            max-width: 500px;
+            max-width: auto;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
         }
   .square {
     background-color: #212121;
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 25px;
+    margin-bottom: 35px;
     border-radius: 10px;
     box-shadow: 0 0 5px black; /* sombra leve */
+    max-width: auto;
 }
 
         .tab-content.active {
@@ -404,4 +430,3 @@ select:focus, input[type="number"]:focus {
       opacity: 0;
     }
     
-
