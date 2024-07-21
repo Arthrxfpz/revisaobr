@@ -5,6 +5,8 @@
   color: white;
         }
 
+
+
         .marquee {
           font-size: 10px;
             display: block;
@@ -18,10 +20,10 @@
         }
     
         .animated-text {
-            font-size: 1rem;
+            font-size: 0.7rem;
             font-weight: bold;
             color: white;
-            animation: fadeInOut 10s infinite;
+            animation: fadeInOut 5s infinite;
         }
 
         @keyframes fadeInOut {
@@ -160,7 +162,8 @@ button a.tab-link:hover {
 }
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Oswald", sans-serif;
+          
             background-color: rgb(15, 15, 15);
             color: white;
             overflow-x: hidden;
@@ -169,6 +172,10 @@ button a.tab-link:hover {
           
           
         }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 
         
 

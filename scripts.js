@@ -105,7 +105,25 @@ for (var i = 0; i < acc.length; i++) {
     });
 }
 
+document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Obtém o texto a ser copiado do atributo data-text do botão clicado
+                const textoParaCopiar = this.getAttribute('data-text');
+                
+                // Cria um elemento temporário para copiar o texto
+                const tempInput = document.createElement('input');
+                tempInput.value = textoParaCopiar;
+                document.body.appendChild(tempInput);
 
+                // Seleciona e copia o texto
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+                document.execCommand('copy');
+
+                // Remove o elemento temporário
+                document.body.removeChild(tempInput);
+            });
+        });
 
 
 
