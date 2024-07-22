@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('customAlert').style.display = 'none';
         }
     
-       function updateTimer() {
-            const lastUpdate = new Date('2024-07-22T10:52:00'); // Data e hora da última atualização
+     function updateTimer() {
+            const lastUpdate = new Date('2024-07-22T12:15:00'); // Data e hora da última atualização
             const now = new Date();
             const diff = now - lastUpdate;
 
@@ -24,16 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
             let timeString = '';
-            if (days > 0) timeString += `${days}d `;
-            if (hours > 0) timeString += `${hours}h `;
-            if (minutes > 0) timeString += `${minutes}m `;
+            if (days > 0) {
+                timeString = `${days} dia${days > 1 ? 's' : ''}`;
+            } else if (hours > 0) {
+                timeString = `${hours} hora${hours > 1 ? 's' : ''}`;
+            } else {
+                timeString = `${minutes} minuto${minutes > 1 ? 's' : ''}`;
+            }
 
-            document.getElementById('timer').innerText = timeString.trim();
+            document.getElementById('timer').innerText = timeString;
         }
 
         setInterval(updateTimer, 60000); // Atualiza o timer a cada minuto
         updateTimer(); // Chama a função para exibir o tempo imediatamente
-    
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const tabsContainer = document.getElementById('tabsContainer');
 
