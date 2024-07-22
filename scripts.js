@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.main-content').style.display = 'block';
     }, 0000);
 
+    document.getElementById('alertButton').onclick = function() {
+            document.getElementById('customAlert').style.display = 'flex';
+        };
+
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+    
+    
+    
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const tabsContainer = document.getElementById('tabsContainer');
 
@@ -42,6 +52,7 @@ function closeMenu(event) {
     }
 }
 
+            
             // Atualiza o estado das abas
             tabLinks.forEach(link => link.classList.remove('active'));
             this.classList.add('active');
