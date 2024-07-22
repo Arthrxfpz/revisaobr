@@ -21,11 +21,11 @@
 
         .alert-content {
             background-color: #212121;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: flex;
             color: white;
-            max-width: 300px;
+            max-width: auto;
             width: 100%;
             position: relative;
         }
@@ -37,7 +37,7 @@
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .alert-content button:hover {
