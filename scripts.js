@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('customAlert').style.display = 'none';
         }
     
-     function updateTimer() {
-            const lastUpdate = new Date('2024-07-22T12:15:00'); // Data e hora da última atualização
+             function updateTimer(timerElement) {
+            const lastUpdate = new Date(timerElement.getAttribute('data-update-time'));
             const now = new Date();
             const diff = now - lastUpdate;
 
@@ -32,14 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 timeString = `${minutes} minuto${minutes > 1 ? 's' : ''}`;
             }
 
-            document.getElementById('timer').innerText = timeString;
+            timerElement.innerText = timeString;
         }
 
-        setInterval(updateTimer, 60000); // Atualiza o timer a cada minuto
-        updateTimer(); // Chama a função para exibir o tempo imediatamente
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const tabsContainer = document.getElementById('tabsContainer');
+        function initializeTimers() {
+            const timers = document.querySelectorAll('.timer');
+            timers.forEach(timerElement => {
+                updateTimer(timerElement);
+                setInterval(() => updateTimer(timerElement), 60000); // Atualiza o timer a cada minuto
+            });
+        }
 
+        initializeTimers(); // Inicializa os timers
     // Alterna o menu de abas ao clicar no ícone de menu
     hamburgerMenu.addEventListener('click', function() {
         const isOpen = tabsContainer.style.transform === 'translateX(0%)';
