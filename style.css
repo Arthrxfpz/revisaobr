@@ -55,38 +55,7 @@
             cursor: pointer;
         }
 
-        .marquee {
-          font-size: 10px;
-            display: block;
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-    
-        .animated-text {
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: white;
-            animation: fadeInOut 5s infinite;
-        }
-
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(1);
-            }
-        }
-
-
-
+        
 
 
 /* Quadrado das anotações */
@@ -350,8 +319,8 @@ button a.tab-link:hover {
         }
 
         .content {
-            padding: 20px;
-            margin-top: 60px;
+            padding: 15px;
+            margin-top: 65px;
             display: flex;
             justify-content: center;
             transition: opacity 0.5s;
@@ -361,19 +330,23 @@ button a.tab-link:hover {
         .tab-content {
             display: none;
             background-color:rgb(15, 15, 15);
-            padding: 0px;
+            padding: 3px;
             border-radius: 0px;
-            transition: opacity 0.4s, transform 0.3s;
+            transition: opacity 0.2s, transform 0.2s;
             width: 100%;
             max-width: auto;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
+          
         }
   .square {
+    
+    border: 1px solid black;
+    height: auto;
     background-color: #212121;
     padding: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px black; /* sombra leve */
+    box-shadow: 0 0 20px black; /* sombra leve */
     max-width: auto;
 }
 
@@ -496,16 +469,4 @@ select:focus, input[type="number"]:focus {
     background-color: none;
     border: 0px solid #ddd;
   }
-  /* Rolagem suave */
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Efeito de piscar */
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    
+  
