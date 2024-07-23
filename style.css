@@ -1,8 +1,65 @@
-.marquee-container {
-            width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-  color: white;
+
+.tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            width: auto;
+            max-width: 250px; /* Largura máxima para o balão */
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 15px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Posiciona o balão acima do texto */
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: normal; /* Quebra de linha automática */
+            word-wrap: break-word; /* Quebra de palavras longas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+
+        .tooltip-text::after {
+            content: " ";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .tooltip-text-container {
+            font-size: 18px;
+            color: white; /* Cor do texto */
+            text-decoration: underline; /* Sublinha o texto */
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .tooltip-text {
+                max-width: 200px; /* Ajuste para telas menores */
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .tooltip-text-container {
+                font-size: 16px;
+            }
         }
 
         #customAlert {
@@ -185,7 +242,7 @@
 button a.tab-link {
       font-family: "Rubik", sans-serif;
     display: block; /* Isso faz com que o link ocupe 100% da largura do botão */
-    padding: 15px 15px; /* Ajuste o padding conforme desejado */
+    padding: 20px 20px; /* Ajuste o padding conforme desejado */
     background-color: #616161;
     color: white;
     border: none;
