@@ -26,18 +26,18 @@
             text-align: flex;
             color: white;
             max-width: auto;
-            width: 100%;
+            width: 400px;
             position: relative;
         }
 
         .alert-content button {
-            background-color: #424242;
+            background-color: #616161;
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .alert-content button:hover {
