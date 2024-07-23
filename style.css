@@ -56,7 +56,29 @@
         }
 
         
+.exam {
+  
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
+        .exam:hover {
+            transform: scale(1.01);
+            background-color: #424242;
+        }
+
+
+        .exam p {
+            font-weight: 300;
+          font-size: 14px;
+        }
+.exam h2 {
+  color: aliceblue
+}
 
 /* Quadrado das anotações */
   textarea {
@@ -163,10 +185,10 @@
 button a.tab-link {
       font-family: "Rubik", sans-serif;
     display: block; /* Isso faz com que o link ocupe 100% da largura do botão */
-    padding: 20px 40px; /* Ajuste o padding conforme desejado */
+    padding: 15px 15px; /* Ajuste o padding conforme desejado */
     background-color: #616161;
     color: white;
-    border: 1px solid black;
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
