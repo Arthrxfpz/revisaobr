@@ -3,72 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão - Manutenção</title>
+    <title>Login Revisão</title>
     <style>
-    @import
-    url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-      body {
-        font-family: "Rubik", sans-serif;
-        background: #121212;
-        color: white ;
-      }
-      .principal {
-        margin: 15px;
-      }
-      .principal h1 {
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        body {
+            color: white;
+            font-family: "Rubik", sans-serif;
+            
+            justify-content: center;
+            align-items: center;
+            
+            margin: 0px;
+            background: black;
+        }
+        .login-container {
+           margin:auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color:white;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color:#1D9BF0;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2575fc;
+        }
+    aside h1 {
+        margin:10px;
+        text-align:center;
+        font-size: 2.7em;
+    }
+    
+    .novidades {
+      
+      
+      width: 400px;
+            margin: auto;
+            bottom: 10;
+            transition-duration: 0.5s;
         text-align: center;
-        font-size: 2.4em;
-        margin-bottom: 50px;
-      }
-      .principal p {
-        line-height: 1.7em;
-        font-size: 17px;
-      }
-      .principal-2 h2 {
-        text-align: center;
-        margin: 0px;
-        font-size: 1.3em;
-      }
-      .principal u {
-        color: #828ae4;
-      }
-      .principal-2 a {
-        text-decoration: none;
-        color: red;
-        font-size: 20px;
-      }
-      .revisao {
-        text-align: center;
-        margin: 0px;
-      }
-      .principal-2 {
-        border-radius: 10px;
-        padding: 10px;
-        margin-top: 50px;
-      }
+        border: 1px solid #ffffff38;
+        border-radius: 5px;
+        box-shadow: 5px 5px 1px 5px #ffffff49;
+    }
     </style>
 </head>
 <body>
-  <div class="principal">
-    <h1>Ops! :( </h1>
-<p>Informamos que nossos serviços estão atualmente em manutenção. Estamos
-realizando melhorias para garantir uma melhor experiência
-para todos. Durante este período, o aplicativo de revisão também estará
-indisponível pois ele ficará inativo.</p> 
-<p> Você poderá manter o aplicativo instalado se quiser, pois o serviço vai ser
-atualizado em breve sem a necessidade de um novo aplicativo.</p>
-<p> Consulte um professor próximo destinado a sua matéria que você tem a dúvida
-até nosso serviço ser atualizado.</p>
-<p>Pedimos desculpas por qualquer inconveniente e agradecemos pela
-compreensão. Estamos trabalhando para restabelecer o funcionamento normal o mais
-rápido possível. <u>Você receberá uma notificação quando este período for
-encerrado.</u></p>
-   </div>
-   <div class="principal-2">
-         <h2> Atenciosamente;</h2>
-    <p class="revisao"> Equipe da Revisão</p>
-    <a href="https://google.com.br"> Sair</a>
-    </div>
-   </div>
+    <aside> 
+        <h1> R</h1>
+    </aside>
+        
+<div class="login-container">
+    <h2>Faça Login na Revisão</h2>
+    <form onsubmit="return loginUser()">
+        <input type="text" id="username" placeholder="Insira seu nome de usuário" maxlength="15" required>
+        <input type="submit" value="Entrar">
+    </form>
+    <h5> Não se preocupe, suas informações estarão visíveis apenas para você! </h5>
+</div>
+<div class="novidades"> 
+    <h2> Veja as principais novidades e matérias do momento!</h2>
+</div>
+
+        
+
+    <script>
+        // Verifica se já há um nome de usuário salvo no localStorage
+        window.onload = function() {
+            var savedUsername = localStorage.getItem('username');
+            if (savedUsername) {
+                window.location.href = "inicio.html?username=" + encodeURIComponent(savedUsername);
+            }
+        }
+
+        function loginUser() {
+            var username = document.getElementById("username").value;
+            localStorage.setItem('username', username); // Salva o nome de usuário no localStorage
+            window.location.href = "inicio.html?username=" + encodeURIComponent(username);
+            return false;  // Evita o envio do formulário
+        }
+    </script>
 </body>
 </html>

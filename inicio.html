@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+</head>
+<body>
+    <h1 id="welcomeMessage"></h1>
+            <button class="logout-btn" onclick="logout()">Desconectar</button>
+            
+    <div class="titulo"> 
+        <h4>R</h4>
+    </div>
+
+    <header>
+        <a href="Index.html" style="border-bottom: 5px solid #1D9BF0;">Para você</a>
+        <a href="Novidades.html">Suas matérias</a>
+    </header>
+
+    <div class="Container-principal">
+        <h5>Destaque</h5>
+        <h2>Olá!</h2>
+        <p>A nova atualização do site Revisão trouxe mudanças que melhoram a experiência do usuário. O design foi renovado, agora com uma aparência mais moderna e cores vibrantes que tornam a navegação mais agradável. A interface também ficou mais fluida e fácil de usar, com menus simplificados e transições suaves entre as páginas. Essas melhorias foram feitas para que você encontre o que precisa de forma rápida e sem complicações, tornando o site ainda mais eficiente e agradável de usar.</p>
+        <hr>
+        <h4>Publicado em 1 de setembro às 18:27h</h4>
+    </div>
+
+    <hr>
+
+    <div class="Container-principal">
+        <h5>Em Alta</h5>
+        <h1>Nota da atualização</h1>
+        <p>- Mudança significativa na interface, com novas cores, com um estilo muito superior.</p>
+    </div>
+
+    <script>
+// Função para pegar o nome do usuário da URL e exibir a mensagem de boas-vindas
+window.onload = function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var username = urlParams.get('username');
+
+    if (username) {
+        var currentTime = new Date();
+        var currentHour = currentTime.getHours();
+        var greetingMessage = "";
+
+        if (currentHour >= 0 && currentHour < 5) {
+            greetingMessage = "Boa madrugada, " + username + "!";
+        } else if (currentHour >= 5 && currentHour < 13) {
+            greetingMessage = "Bom dia, " + username + "!";
+        } else if (currentHour >= 13 && currentHour < 19) {
+            greetingMessage = "Boa tarde, " + username + "!";
+        } else if (currentHour >= 19 && currentHour < 24) {
+            greetingMessage = "Boa noite, " + username + "!";
+        }
+
+        document.getElementById("welcomeMessage").textContent = greetingMessage;
+    }
+}
+
+// Função para "deslogar", removendo o nome de usuário do localStorage
+function logout() {
+    localStorage.removeItem('username');
+    window.location.href = "index.html";
+}
+
+    </script>
+</body>
+</html>
