@@ -369,7 +369,7 @@ select:focus, input[type="number"]:focus {
             text-align: flex;
             color: white;
             max-width: auto;
-            width: 400px;
+            width: 350px;
             position: relative;
         }
 
