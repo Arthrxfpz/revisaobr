@@ -85,7 +85,7 @@ function closeMenu(event) {
             // Transição para ocultar todas as abas
             tabContents.forEach(content => {
                 content.classList.add('hidden');
-                setTimeout(() => content.classList.remove('active'), 500);
+                setTimeout(() => content.classList.remove('active'), 300);
             });
 
             // Mostra a aba selecionada com transição
@@ -93,7 +93,7 @@ function closeMenu(event) {
             setTimeout(() => {
                 tabContent.classList.add('active');
                 tabContent.classList.remove('hidden');
-            }, 500);
+            }, 300);
 
             // Adiciona estado ao histórico
             const tabId = this.getAttribute('href').substring(1);
@@ -299,48 +299,4 @@ function checkVersions() {
 }
 
 
-      function startCountdown(elementId, endDate) {
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = endDate - now;
-
-        if (distance < 0) {
-            document.getElementById(elementId).innerHTML = "A Prova Já foi Iniciada";
-            clearInterval(interval);
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        let countdownString = "";
-
-        if (days > 0) {
-            countdownString += `${days}d `;
-        }
-        if (days > 0 || hours > 0) {
-            countdownString += `${hours}h `;
-        }
-        if (days > 0 || hours > 0 || minutes > 0) {
-            countdownString += `${minutes}m `;
-        }
-        countdownString += `${seconds}s`;
-
-        document.getElementById(elementId).innerHTML = countdownString;
-    }
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-}
-
-const event1Date = new Date("2024-08-23T10:10:00").getTime(); // Prova de Geografia
-const event2Date = new Date("2024-08-23T07:40:00").getTime();
-const event3Date = new Date("2024-08-15T00:00:00").getTime();
-
-startCountdown("countdown1", event1Date);
-startCountdown("countdown2", event2Date);
-startCountdown("countdown3", event3Date);
-
-
+      
