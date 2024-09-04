@@ -97,20 +97,11 @@
         <span class="tooltip-text-container"> <h2>CALENDÁRIO DAS PROVAS</h2></span>
         <div class="tooltip-text">No Calendario das Provas, você fica informado sobre tudo das provas!</div>
     </div>
-  <h3> </h3>
                 <h3> Trabalho de Geografia</h3>
 
                 <p>16 De Agosto</p>
                
   <br>
-  <h3> Prova de Ciências</h3>
-  <p> 19 De Agosto</p>
-  
-  <div class="button-container">
-    <button class="full-width-button">
-        <a href="#tab4" class="tab-link">Prova De Ciências</a>
-    </button>
-    <br> <br>
                 <h3> Prova Geral De Geografia</h3>
                 <p> 23 De Agosto</p>
   
@@ -122,14 +113,14 @@
                  <br>
                  <br>
                  <h3> Prova De Artes</h3>
-                 <p> Sem informações no momento.</p>
+                 <p> Sem informações no momento, Para Saber mais clique abaixo.
                  
                    <div class="button-container">
     <button class="full-width-button">
         <a href="#tab9" class="tab-link">Prova De Artes</a>
     </button>
                    </div>
-               </div>
+                 
 </div>
               </div>
 
@@ -225,22 +216,7 @@
             <div id="tab4" class="tab-content hidden">
               <div class="square">
                 <h2>Ciências</h2>
-                <hr>
-                <br>
-                <h2> Prova sem consulta</h2>
-                <h5> Data: 12 De julho - Sexta-Feira</h5>
-                <h5> Horario: 7h40 (Duas Aulas)</h5>
-                <h5> Valor: 30 Pontos</h5>
-                  
-                <h5> Tempo Restante:<p id="countdown2"></p></h5>
-                <br>
-                <br>
-                <h3>CONTEÚDOS</h3>
-                <p>⮕ Historico do Atomo</p>
-                  
-                
-                
-        
+               <p>Sem conteúdo por Aqui. Quando tiver você vai ver aqui.</p>
               </div>
             </div>
           <div id="tab5" class="tab-content hidden">
@@ -474,53 +450,6 @@ document.getElementById('alertButton').onclick = function() {
         function closeAlert() {
             document.getElementById('customAlert').style.display = 'none';
         }
-
-
-function startCountdown(elementId, endDate) {
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = endDate - now;
-
-        if (distance < 0) {
-            document.getElementById(elementId).innerHTML = "A Prova Já foi Iniciada";
-            clearInterval(interval);
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        let countdownString = "";
-
-        if (days > 0) {
-            countdownString += `${days}d `;
-        }
-        if (days > 0 || hours > 0) {
-            countdownString += `${hours}h `;
-        }
-        if (days > 0 || hours > 0 || minutes > 0) {
-            countdownString += `${minutes}m `;
-        }
-        countdownString += `${seconds}s`;
-
-        document.getElementById(elementId).innerHTML = countdownString;
-    }
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-}
-
-const event1Date = new Date("2024-08-23T10:10:00").getTime(); // Prova de Geografia
-const event2Date = new Date("2024-08-19T07:40:00").getTime();
-
-startCountdown("countdown1", event1Date);
-startCountdown("countdown2", event2Date);
-
-
-
-
 
 </script>
 
