@@ -274,14 +274,14 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
           line-height: 1.4em;
         }
         .contener-main h5 {
+        box-shadow: 2px 1px 4px 5px rgba(10,7,210,0.319);
           margin: 0px;
           border-radius: 10px;
-          margin-bottom: 10px;
+          margin-bottom: 25px;
           padding: 5px;
-          background: #d76705e4;
+          background:linear-gradient(to bottom, #0b29dc, #501bda);
           display: inline-block;
-  margin-right: 10px; /* Espaçamento entre os títulos */
-  margin-bottom: 10px;
+  margin-right: 1px; /* Espaçamento entre os títulos */
         }
 
 #notepad {
@@ -491,8 +491,8 @@ select:focus, input[type="number"]:focus {
   /* botÃ£o das anotaÃ§Ãµes ativado */
     button:hover {
       transition-duration: 0.4s;
-        background-color:  #0f0c0c;
-        border: 1px solid #ffffff3c;
+        background-color:  #353535;
+        
     }
   
     /* menu acolhivel */
@@ -513,7 +513,7 @@ select:focus, input[type="number"]:focus {
             align-items: center;
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 5px;
+            
      
         }
 
