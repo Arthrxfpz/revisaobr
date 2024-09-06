@@ -1,7 +1,9 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
         body {
             margin: 0;
-            font-family: "Rubik", sans-serif;
-            background-color: rgb(15, 15, 15);
+            font-family: "Lato", sans-serif;
+            background-color: rgb(6,6,6);
             color: white;
            user-select: none;
           font-size: 14px;
@@ -49,7 +51,7 @@
           backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #1c1c1c9b , #212121);
+            background: linear-gradient(to bottom, #1c1c1cda , #212121df);
           margin-bottom: 40px;
             padding: 7px;
             position: fixed;
@@ -142,7 +144,7 @@
 
         .tab-content {
             display: none;
-            background-color:rgb(15, 15, 15);
+            background-color:rgb(6,6,6);
             padding: 0px;
             border-radius: 0px;
             transition: opacity 0.2s, transform 0.2s;
@@ -250,7 +252,7 @@
           border-radius: 15px;
           padding: 20px;
           border: 3px solid black;
-    background: linear-gradient(to bottom, #060606bc, #0e0e0e3f, #2121212d);
+    background: #2121217e;
     box-shadow: 0 0 30px rgba(0,0,0,0.525); /* sombra leve */
     max-width: 700px;
           margin-bottom: 40px;
