@@ -48,10 +48,11 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
   text-align: center;
 }
         .navbar {
+          box-shadow: 1px 1px 1px 2px rgb(17,1,36);
           backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #1c1c1cda , #212121df);
+            background: linear-gradient(to bottom, #1c1c1ca7 , #212121a9);
           margin-bottom: 40px;
             padding: 7px;
             position: fixed;
@@ -155,8 +156,8 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
         }
   .square {
     width: auto;
-    border: 3px solid black;
-    background: linear-gradient(to bottom, #060606bc, #0e0e0e3f, #2121212d);
+    border: 1px solid black;
+    background: #2121217e;
     padding: 18px;
     margin: auto;
     border-radius: 15px;
@@ -168,9 +169,18 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
   border: 1px solid #ffffff2a;
 }
 .square h2 {
+  margin-bottom: 35px;
+  text-align: center;
   color: #f1f1f1;
   font-size: 24px;
   
+}
+.square h3 {
+  margin-top: 30px;
+  margin:0px;
+}
+.square h5 {
+ color:#858585;
 }
 .square p {
   font-size: 15px;
@@ -409,7 +419,7 @@ select:focus, input[type="number"]:focus {
             display: flex;
             justify-content: center;
             align-items: center;
-          backdrop-filter: blur(15px);
+          backdrop-filter: blur(7px);
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: none; /* Inicialmente oculto */
