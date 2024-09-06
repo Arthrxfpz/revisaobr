@@ -42,14 +42,14 @@
   text-align: center;
   margin: 0px;
 }
-.square > #paragrafo-boasvindas {
+.square > #paragrafo-boasvindas {  
   text-align: center;
 }
         .navbar {
-          backdrop-filter: blur(11px);
+          backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #61616190 30%,#1c1c1c9b 90%);
+            background: linear-gradient(to bottom, #1c1c1c9b , #212121);
           margin-bottom: 40px;
             padding: 7px;
             position: fixed;
