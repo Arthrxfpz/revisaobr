@@ -48,11 +48,11 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
   text-align: center;
 }
         .navbar {
-          box-shadow: 1px 1px 1px 2px rgb(17,1,36);
+        
           backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #1c1c1ca7 , #212121a9);
+            background: linear-gradient(to bottom, #1c1c1c , #1c1c1c4e);
           margin-bottom: 40px;
             padding: 7px;
             position: fixed;
