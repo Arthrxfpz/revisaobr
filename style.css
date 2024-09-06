@@ -271,11 +271,16 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
           Color: #130bfc;
           font-size: 16px;
         }
+        .contener-main a:hover {
+          color: #630691fa;
+          transition-duration: 0.6s;
+         
+        }
         
         
         .contener-main h2 {
           text-shadow: 2px 1px 2px rgba(255,255,255,0.856); 
-          margin: 5px;
+          margin: 10px;
           text-align: center;
           font-size: 27px;
         }
