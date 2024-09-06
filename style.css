@@ -215,8 +215,9 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
     }
 
     .menu ul {
-      border: 1px solid white;
-      border-radius: 10px;
+      
+      border: 1px solid #525252;
+      border-radius: 7px;
       list-style-type: none;
       padding: 0;
       display: none;
@@ -228,12 +229,12 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
 
     .menu ul li {
     padding: 15px;
-    border-bottom: 1px solid white;
+    border: 1px solid #ffffff39;
     cursor: pointer;
     border-radius: 8px; /* ou outro valor conforme desejado */
 }
     .menu ul li:hover {
-      background-color: #f1f1f1;
+      background-color: #3a3a3a;
     }
   .no-transitions * {
       transition: none !important;
@@ -267,8 +268,8 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
         }
         
         .contener-main a {
-          Color: #1508a9;
-          font-size: 18px;
+          Color: #130bfc;
+          font-size: 16px;
         }
         
         
