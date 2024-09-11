@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
 <div id="customAlert">
         <div class="alert-content">
             <button class="close-btn" onclick="closeAlert()">&times;</button>
@@ -30,12 +30,19 @@
          <h3> <u> Balão com interações de conteúdos </u></h3>
          <p> Foram adicionados balões que conforme o conteúdo, muda a palavra de
          destaque.</p>
-
+<h3><u> A volta da Área das anotações</u> </h3>
+<p> A Função de Fazer suas próprias anotações e personalizar elas está de
+volta!<br> Obs: Se caso você tinha uma anotação salva antes de removermos a
+função, ela vai retornar completamente do jeito que você deixou, exeto se caso você
+tenha desinstalado o aplicativo ou redefinido os dados.</p>
+<h3> Novo Calendário de Provas </h3>
+<p> Agora com um Visual bem mais organizado e com cores melhores, vai ser
+possível visualizar em ordem e com 100% de precisão as principais matérias.</p>
 
     <div>
       <hr>
        A ultima alteração de conteúdo foi há <b> <span class="timer"
-       data-update-time="2024-09-06T11:52:00"></span> </b>
+       data-update-time="2024-09-10T22:28:00"></span> </b>
     </div>
         </div>
     </div>
@@ -44,6 +51,7 @@
     </div>
   
     <div class="main-content">
+      
         <div class="navbar">
           
             <div class="hamburger-menu" id="hamburgerMenu">
@@ -54,18 +62,19 @@
             </div>
           
             <div class="navbar-title">Revisão</div>  
-          
+         
           
           <div class="menu" onclick="toggleMenu()">
             
     <span>&vellip;</span>
     <ul id="menuItems">
-       <li id="alertButton">Nota das atualizações</li>
-      <li onclick="checkVersions()">Verificar versões</li>
+       <li id="alertButton">Novidades</li>
+      <li onclick="checkVersions()">Procurar Atualizações</li>
 <li onclick="novoLink()">Compartilhar</li>
        <li onclick="toggleTransitions()">Desativar transições</li>
-    
-            
+    <li class="reload-btn" onclick="location.reload()">Atualizar Página
+    </li>
+
     </ul>        
             
   </div>
@@ -73,6 +82,7 @@
         </div>
         <div class="tabs-container" id="tabsContainer">
             <div class="tabs" id="tabs">
+              <h1> Menu</h1>
                 <a href="#tab1" class="tab-link">Inicio</a>
                 <a href="#tab2" class="tab-link">Matematica</a>
                 <a href="#tab3" class="tab-link">Português</a>
@@ -93,18 +103,22 @@
   <h2> Confira as novidades</h2>
   <p> Descubra o que tem de novo, e, receba as principais notificações
   importantes!</p>
+
 </div>
 <div class="contener-main">
   <h5> Principal Destaque</h5>
   <h2> Calendário de Provas</h2>
-  <p>Tudo feito! Não há datas para novas provas, volte aqui mais tarde!</p>
-  
+<p> Tudo foi feito! Nenhuma prova ou teste foi marcado até momento. </p>
+
 </div>
 <div class="contener-main">
   <h5>Atualizações</h5>
   <h2> Importante!</h2>
   <p> Nova atualização do Aplicativo Revisão. Faça o Download  agora para
   uma melhor compatibilidade e melhorias de interface.</p>
+    <p> Se você quer conferir as novas funções e mais detalhes de atualizações,
+  confira clicando no menu dos 3 pontinhos e clique em "Novidades de
+  Atualizações".</p>
   <p> Atualização Disponível apenas para aparelhos Android.</p>
   <p> Obs: Se você ja instalou a versão mais atual, apenas ignore este aviso.</p>
   <h4> Veja as mudanças:</h4>
@@ -125,7 +139,32 @@
        </div>
  
     </div>
+    </div>
+              
+              <div class="contener-main">
+                <h5> Anotações </h5>
+      <h2> Bloco de Notas </h2>
+              <textarea id="notepad" placeholder="Escreva aqui..."></textarea><br>
+<button onclick="salvarAnotacoes()">Salvar</button>
+<button onclick="limparAnotacoes()">Restaurar</button>
+                <button><label for="corTexto">Cor do texto</label>  </button>
+<input type="color" id="corTexto" onchange="mudarCorTexto()"> <br> <br>
+<label for="fonte"> Fonte do texto</label> 
+<select id="fonte" onchange="mudarFonte()"> 
+    <option value="Arial">Arial</option>
+<option value="Times New Roman">Times New Roman</option>
+<option value="Georgia">Georgia</option>
+<option value="Courier New">Courier New</option>
+<option value="'Merienda', cursive">Merienda</option>
+<option value="'Bitter', serif">Bitter</option>
+<option value="'Bebas Neue', cursive">Bebas Neue</option>
+<option value="'Playfair Display', serif">Playfair Display</option>
+</select>
+                <br> <br>
+<label for="tamanhoFonte">Tamanho do Texto</label>
+<input type="number" id="tamanhoFonte" min="10" max="24" value="14" onchange="mudarTamanhoFonte()">
               </div>
+    
  
            </div>
                
@@ -416,6 +455,8 @@
     </div>
      <script src="scripts.js"></script>
 <script> 
+
+
 document.getElementById('alertButton').onclick = function() {
             document.getElementById('customAlert').style.display = 'flex';
         };

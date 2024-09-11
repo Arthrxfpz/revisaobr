@@ -1,9 +1,48 @@
 @import
-url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+table {
+  
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1f1f1f;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background:linear-gradient(to bottom, #545454a8, #313131);
+            color: #fff;
+        }
+        td {
+            border-bottom: 0px solid #333;
+        }
+        tr:hover {
+          padding: 20px;
+            
+            transition-duration: 0.5s;
+        }
+       
+       td a {
+         padding: 5px;
+         border-radius: 4px;
+                    background:linear-gradient(to bottom, #0b29dc, #501bda);
+                    box-shadow: 2px 1px 4px 5px rgba(10,7,210,0.319);
+            color: white;
+            text-decoration: 
+        }
+       td a:hover {
+            text-decoration: underline;
+                      background:linear-gradient(to top, #501bda, #0b29dc);
+        }
         body {
             margin: 0;
-            font-family: "Lato", sans-serif;
-            background-color: rgb(6,6,6);
+           font-family: "Nunito Sans", sans-serif;
+            background-color: rgb(2,2,2);
             color: white;
            user-select: none;
           font-size: 15px;
@@ -48,21 +87,24 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
   text-align: center;
 }
         .navbar {
-        
-          backdrop-filter: blur(8px);
+          box-shadow: 1px 1px 1px 3px #2b2b2b37;
+          backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #1c1c1c , #1c1c1c00);
+            background: linear-gradient(to bottom, #1c1c1cc7 , #1c1c1c00);
           margin-bottom: 40px;
-            padding: 9px;
+            padding: 10px;
             position: fixed;
             width: 100%;
             z-index: 9998;
             top: 0
+            
+           
         }
 
         .hamburger-menu {
     cursor: pointer;
+    margin-left: 3px;
     margin-right: 10px;
     transition: transform 0.3s;
           z-index:999;
@@ -88,7 +130,7 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
     transform: rotate(50deg) translate(-6px, -5px);
 }
         .navbar-title {
-            font-size: 1.7em;
+            font-size: 1.5em;
             color: white;
           
           
@@ -98,15 +140,20 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
             flex-direction: column;
             position: fixed;
             left: 0;
-            top: 38px;
+            top: 0px;
             width: 300px;
             height: 100%;
-            background-color: black;
-          
-            padding-top: 10px;
+            background:linear-gradient(to bottom, rgba(11,11,11,0.718), #0f0f0faa);
+          backdrop-filter: blur(40px);
+            padding-top: 15px;
             transform: translateX(-100%);
             transition: transform 0.4s;
-            z-index: 999;
+            z-index: 9999;
+           
+          
+        }
+        .tabs-container h1 {
+          text-align: center;
           
         }
 
@@ -118,37 +165,38 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
 
         .tabs a {
             color: white;
-            padding:  15px;
+            padding:  17px;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
             margin: 5px 15px;
-            border: 1px solid #4747474a;
-            border-radius: 7px;
+            border: 1px solid #3333334a;
+            border-radius: 6px;
           background: #202020;
         
       
         }
 
         .tabs a:hover, .tabs a.active {
-            background-color: #747474c3;
+            background-color: #767676c9;
             transform: scale(1.04);
+            
         }
 
-        .content {
-            padding: 20px;
-            margin-top: 65px;
-            display: flex;
-            justify-content: center;
-            transition: opacity 0.5s;
-           
-        }
+.content {
+    padding: 22px;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+}
+
 
         .tab-content {
             display: none;
-            background-color:rgb(6,6,6);
+            
             padding: 0px;
             border-radius: 0px;
-            transition: opacity 0.2s, transform 0.2s;
+            transition: opacity 0.4s, transform 0.7s;
             width: 100%;
             max-width: auto;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
@@ -168,7 +216,7 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
 .square h1 {
   text-decoration: underline;
   margin-top: 0px;
-  text-shadow: 1px 1px 3px #f3f3f27a, 2px 1px 3px #00fff964;
+  text-shadow: 1px 1px 2px #f3f3f27a; 
   background:
   padding: 3px;
   border-radius: 5px;
@@ -217,7 +265,7 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
 
   .menu {
       position: absolute;
-      right: 10px;
+      right: 20px;
       margin: 20px;
       cursor: pointer;
     }
@@ -229,77 +277,82 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
 
     .menu ul {
       
-      border: 1px solid #525252;
-      border-radius: 7px;
+      border: 2px solid #525252b2;
+      border-radius: 10px;
       list-style-type: none;
       padding: 0;
       display: none;
       position: absolute;
       right: 0;
       background-color: #272727;
-      transition: max-height 0.5s ease-in-out;
+      transition-duration: 0.3s;
     }
 
     .menu ul li {
+      
     padding: 15px;
-    border: 1px solid #ffffff39;
+    border-bottom: 3px solid #525252ae;
     cursor: pointer;
-    border-radius: 8px; /* ou outro valor conforme desejado */
+     /* ou outro valor conforme desejado */
 }
     .menu ul li:hover {
-      background-color: #3a3a3a;
+      background-color: #1a1a1a;
     }
   .no-transitions * {
       transition: none !important;
     }
   
   .image-container {
+    border: 1px solid rgba(0,0,0,0.244);
     width: 100%;
     max-width: auto;
     height: 200px;
+    max-height: 500px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
+  
     width: 100%;
     height: 200px;
+    max-height: 500px;
     display: block;
 }
   
         .contener-main {
           margin: auto;
           border-radius: 15px;
-          padding: 20px;
+          padding: 18px;
           border: 1px solid rgba(5,1,11,0.144);
     background: #2121217e;
     box-shadow: 1px 1px 1px 7px rgba(36,36,36,0.15);
     max-width: 700px;
           margin-bottom: 50px;
         }
-        
         .contener-main a {
-          Color: #130bfc;
-          font-size: 16px;
+          color: white;
         }
-        .contener-main a:hover {
-          color: #630691fa;
-          transition-duration: 0.6s;
-         
-        }
+.contener-main a:hover {
+  
+  color: #bebebe;
+}
+
         
         
         .contener-main h2 {
-          text-shadow: 2px 1px 2px rgba(255,255,255,0.856); 
-          margin: 10px;
+          text-shadow: 2px 1px 2px rgba(255,255,255,0.856);
+          margin-bottom: 15px; 
           text-align: center;
           font-size: 27px;
         }
         
         .contener-main p {
-          margin: 7px;
+         
+          margin:1px
+          margin-bottom: 10px;
           color: #b2aeae;
           line-height: 1.4em;
         }
@@ -313,10 +366,16 @@ url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0
           display: inline-block;
   margin-right: 1px; /* Espaçamento entre os títulos */
         }
+*:focus {
+  outline: none;
+}
 
 #notepad {
+  color: white;
+  border-radius: 5px;
+  background: rgb(31,31,31);
             width: 100%;
-            height: 330px;
+            height: 250px;
         }
         .control-panel {
             margin-top: 10px;
@@ -429,6 +488,7 @@ select:focus, input[type="number"]:focus {
         }
 
         #customAlert {
+          font-size: 15px;
             position: fixed;
             top: 0;
             left: 0;
@@ -437,7 +497,7 @@ select:focus, input[type="number"]:focus {
             display: flex;
             justify-content: center;
             align-items: center;
-          backdrop-filter: blur(7px);
+          backdrop-filter: blur(10px);
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: none; /* Inicialmente oculto */
@@ -445,22 +505,25 @@ select:focus, input[type="number"]:focus {
         
         .alert-content h2 {
           text-align: center;
-          margin-bottom:60px ;
+          margin-bottom:40px ;
         }
         
         .alert-content h3 {
           margin: 0px;
+          text-decoration: underline;
         }
         
        .alert-content p {
-         margin:3px;
+         font-size: 14px;
+         color: #bebebe;
+         margin:0px;
          margin-bottom:20px ;
-         line-height: 1.5em;
+         line-height: 1.3em;
          
        }
 
         .alert-content {
-            background: #0f0f0f;
+            background: #1d1b1b;
             padding: 30px;
             border-radius: 15px;
             text-align: flex;
@@ -523,7 +586,7 @@ select:focus, input[type="number"]:focus {
 
   /* botÃ£o das anotaÃ§Ãµes */
     button {
-        padding: 5px 5px;
+        padding: 10px 5px;
         font-size: 16px;
         background-color:  #242424;
         color: white;
@@ -531,12 +594,13 @@ select:focus, input[type="number"]:focus {
         border-radius: 5px;
         margin-top: 20px;
         cursor: pointer;
+        margin-right:5px ;
       
     }
   
   /* botÃ£o das anotaÃ§Ãµes ativado */
     button:hover {
-      transition-duration: 0.4s;
+      transition-duration: 0.6s;
         background-color:  #353535;
         
     }
@@ -545,7 +609,7 @@ select:focus, input[type="number"]:focus {
    .accordion {
          font-family: "Rubik", sans-serif;
             cursor: pointer;
-            padding: 17px;
+            padding: 15px;
             width: 100%;
             text-align: center;
             border: 1px solid #1d1d1d;
@@ -564,6 +628,7 @@ select:focus, input[type="number"]:focus {
         }
 
         .accordion:hover, .accordion.active {
+          
             background-color: #616161/* Cor de hover e ativo */
           color: white;
         }
