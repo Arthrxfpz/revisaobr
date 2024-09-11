@@ -89,7 +89,7 @@ table {
 }
         .navbar {
           
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             background: linear-gradient(to bottom, #1c1c1cf1 , #1c1c1c00);
@@ -205,12 +205,12 @@ table {
         }
   .square {
     width: auto;
-    border: 0px solid rgba(5,2,96,0.222);
+    
     background: #2121217e;
     padding: 15px;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px 4px rgba(82,82,82,0.238);
+    box-shadow: 1px 1px 1px 2px rgba(82,82,82,0.238);
     max-width: 1000px;
       margin-bottom: 45px;
 }
@@ -243,6 +243,7 @@ table {
  color:#858585;
 }
 .square p {
+  line-height: 1.4em;
   font-size: 15px;
   color: #f5f5f5c5;
 }
@@ -329,7 +330,7 @@ table {
           padding: 18px;
           border: 1px solid rgba(5,1,11,0.144);
     background: #2121217e;
-    box-shadow: 1px 1px 1px 7px rgba(36,36,36,0.15);
+    box-shadow: 1px 1px 1px 2px rgba(36,36,36,0.15);
     max-width: 700px;
           margin-bottom: 50px;
         }
@@ -608,7 +609,7 @@ select:focus, input[type="number"]:focus {
   
     /* menu acolhivel */
    .accordion {
-         font-family: "Rubik", sans-serif;
+         
             cursor: pointer;
             padding: 15px;
             width: 100%;
@@ -638,7 +639,7 @@ select:focus, input[type="number"]:focus {
     content: '⌵'; /* Unicode character for down arrow */
     font-size: 14px;
     color: white; /* Cor do sÃ­mbolo */
-    transition: transform 0.5s ease; /* Adiciona transiÃ§Ã£o ao sÃ­mbolo */
+    transition: transform 0.4s ease; /* Adiciona transiÃ§Ã£o ao sÃ­mbolo */
     display: inline-block;
 }
 
@@ -654,9 +655,10 @@ select:focus, input[type="number"]:focus {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out; /* TransiÃ§Ã£o suave ao abrir/fechar */
-            margin-bottom: 10px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
             background-color: rgb(30,30,30); /* Cor de fundo do conteÃºdo */
             color: white; /* Cor do texto do conteÃºdo */
         }
@@ -677,7 +679,7 @@ select:focus, input[type="number"]:focus {
          color: #95959f;
        }
   .full-width-button {
-        font-family: "Rubik", sans-serif;
+       
     background-color: #1C1C1C;
     color: white;
     padding: 1px;
@@ -687,7 +689,7 @@ select:focus, input[type="number"]:focus {
 }
 
 button a.tab-link {
-      font-family: "Rubik", sans-serif;
+     
     display: block; /* Isso faz com que o link ocupe 100% da largura do botÃ£o */
     padding: 20px 15px; /* Ajuste o padding conforme desejado */
     background-color: #333333e6;
