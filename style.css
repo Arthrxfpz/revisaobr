@@ -87,11 +87,11 @@ table {
   text-align: center;
 }
         .navbar {
-          box-shadow: 1px 1px 1px 3px #2b2b2b37;
+          
           backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #1c1c1cc7 , #1c1c1c00);
+            background: linear-gradient(to bottom, #1c1c1cf1 , #1c1c1c00);
           margin-bottom: 40px;
             padding: 10px;
             position: fixed;
