@@ -12,7 +12,7 @@
 <meta name="robots" content="index, follow"> <!-- Diretrizes para motores de busca -->
   <link rel="icon" href="favicon.ico.png" type="image/x-icon"> <!-- Favicon padrão -->
 <link rel="apple-touch-icon" href="favicon.ico.png"> <!-- Ícone para dispositivos Apple -->
-  
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -75,6 +75,7 @@ possível visualizar em ordem e com 100% de precisão as principais matérias.</
     <li class="reload-btn" onclick="location.reload()">Atualizar Página
     </li>
 
+
     </ul>        
             
   </div>
@@ -82,22 +83,22 @@ possível visualizar em ordem e com 100% de precisão as principais matérias.</
         </div>
         <div class="tabs-container" id="tabsContainer">
             <div class="tabs" id="tabs">
-              <h1> Menu</h1>
-                <a href="#tab1" class="tab-link">Inicio</a>
-                <a href="#tab2" class="tab-link">Matematica</a>
-                <a href="#tab3" class="tab-link">Português</a>
-              <a href="#tab4" class="tab-link">Ciências</a>
-              <a href="#tab5" class="tab-link">Inglês</a>
-              <a href="#tab7" class="tab-link">Geografia</a>
-              <a href="#tab8" class="tab-link">História</a>
-              <a href="#tab9" class="tab-link">Artes</a>
+             
+                <a href="#inicio" class="tab-link">Inicio</a>
+                <a href="#matematica" class="tab-link"> Matematica</a>
+                <a href="#portugues" class="tab-link">Português</a>
+              <a href="#ciencias" class="tab-link">Ciências</a>
+              <a href="#ingles" class="tab-link">Inglês</a>
+              <a href="#geografia" class="tab-link">Geografia</a>
+              <a href="#historia" class="tab-link">História</a>
+              <a href="#artes" class="tab-link">Artes</a>
               
                 <!-- Adicione mais abas conforme necessário -->
             </div>
         </div>
       
         <div class="content" id="content">
-            <div id="tab1" class="tab-content hidden">
+            <div id="inicio" class="tab-content hidden">
 <div class="contener-main">
   <h5>Bem vindo</h5>
   <h2> Confira as novidades</h2>
@@ -169,7 +170,7 @@ volte mais tarde.</p>
            </div>
                
           <!--Começo da div de matematica-->
-            <div id="tab2" class="tab-content hidden">
+            <div id="matematica" class="tab-content hidden">
               <div class="square">
                 <h1> Matemática</h1>
                 <h2>Essa prova já foi concluída. ✅</h2>
@@ -227,7 +228,7 @@ volte mais tarde.</p>
 
               <!-- fim da div de matemática<!-->
             </div>
-            <div id="tab3" class="tab-content hidden">
+            <div id="portugues" class="tab-content hidden">
                 
               <div class="square">
                 <h1> Português</h1>
@@ -235,14 +236,14 @@ volte mais tarde.</p>
                 volte mais tarde!</p>
               </div>
             </div>
-            <div id="tab4" class="tab-content hidden">
+            <div id="ciencias" class="tab-content hidden">
               <div class="square">
                 <h1>Ciências</h1>
                                <p>Sem provas ou conteúdos acessíveis no momento. Por favor
                 volte mais tarde!</p>
               </div>
             </div>
-          <div id="tab5" class="tab-content hidden">
+          <div id="ingles" class="tab-content hidden">
             <div class="square">
                 <h1>Inglês</h1>
                             <p>Sem provas ou conteúdos acessíveis no momento. Por favor
@@ -250,7 +251,7 @@ volte mais tarde.</p>
             </div>
             </div>
          
-          <div id="tab7" class="tab-content hidden">
+          <div id="geografia" class="tab-content hidden">
             <div class="square"> 
               <h1> Geografia</h1>
                               <h2>Essa prova já foi concluída. ✅</h2>
@@ -282,7 +283,7 @@ volte mais tarde.</p>
     </div>
 
             </div>
-          <div id="tab8" class="tab-content hidden">
+          <div id="historia" class="tab-content hidden">
             <div class="square">
                 <h1>História</h1>
                           <h2>Essa prova já foi concluída. ✅</h2>
@@ -365,7 +366,7 @@ volte mais tarde.</p>
 
 
             </div>
-          <div id="tab9" class="tab-content hidden">
+          <div id="artes" class="tab-content hidden">
             <div class="square">
                 <h1>Artes</h1>
                 <h2>Essa prova já foi concluída. ✅</h2>
@@ -463,6 +464,9 @@ document.getElementById('alertButton').onclick = function() {
 
         function closeAlert() {
             document.getElementById('customAlert').style.display = 'none';
+        }
+        function fecharNotificacao(elemento) {
+            elemento.classList.add('hidden');
         }
 
 </script>

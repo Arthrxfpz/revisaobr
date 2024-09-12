@@ -1,5 +1,27 @@
-@import
-url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'CircularStd';
+  src: url('circular-std-medium-500.ttf') format('truetype');
+  font-weight: 500;
+}
+
+
+.notificacao {
+            background: linear-gradient(to bottom, #f81818, #cd0d0da7);
+            color: white;
+            padding: 2px;
+            margin: 1px;
+            margin-right: 3px;
+            border-radius: 7px;
+            display: inline-block;
+           
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+
+
+
 table {
   
             width: 100%;
@@ -39,9 +61,9 @@ table {
                       background:linear-gradient(to top, #501bda, #0b29dc);
         }
         body {
-          font-weight: 550;
+          font-weight: 500;
             margin: 0;
-font-family: "Montserrat", sans-serif;
+font-family: 'CircularStd', sans-serif;
             background-color: rgb(2,2,2);
             color: white;
            user-select: none;
@@ -143,9 +165,9 @@ font-family: "Montserrat", sans-serif;
             top: 30px;
             width: 330px;
             height: 100%;
-            background:linear-gradient(to bottom, rgb(11,11,11), #0f0f0f);
+            background:linear-gradient(to bottom, rgb(5,5,5), rgb(14,14,14));
 
-            padding-top: 30px;
+            padding-top: 45px;
             transform: translateX(-100%);
             transition: transform 0.5s;
             z-index: 1000;
@@ -167,16 +189,16 @@ font-family: "Montserrat", sans-serif;
             color: white;
             padding:  17px;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-            margin: 5px 15px;
-            border: 1px solid #3333334a;
+            transition: background-color 0.5s, transform 0.3s;
+            margin: 5px 15px 3px;
+            border: 1px solid #4444444a;
             border-radius: 6px;
           background: #202020;
         
       
         }
 
-        .tabs a:hover, .tabs a.active {
+        .tabs a:active, .tabs a.active {
             background-color: #767676c9;
             transform: scale(1.04);
             
@@ -352,8 +374,8 @@ font-family: "Montserrat", sans-serif;
         
         .contener-main p {
          
-          margin:1px
-          margin-bottom: 10px;
+          margin:px
+          margin-bottom: 0px;
           color: #b2aeae;
           line-height: 1.4em;
         }
@@ -710,3 +732,7 @@ button a.tab-link:hover {
     background-color: #2c2626b9;
     color: white;
 }
+
+
+
+
