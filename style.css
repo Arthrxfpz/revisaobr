@@ -632,7 +632,7 @@ select:focus, input[type="number"]:focus {
    .accordion {
          
             cursor: pointer;
-            padding: 15px;
+            padding: 17px;
             width: 100%;
             text-align: center;
             border: 1px solid #1d1d1d;
@@ -677,7 +677,7 @@ select:focus, input[type="number"]:focus {
             overflow: hidden;
             transition: max-height 0.2s ease-out; /* TransiÃ§Ã£o suave ao abrir/fechar */
             margin-bottom: 5px;
-            margin-top: 10px;
+            margin-top: 2px;
             border-radius: 10px;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
             background-color: rgb(30,30,30); /* Cor de fundo do conteÃºdo */
