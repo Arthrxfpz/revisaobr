@@ -1,475 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#05788">
-    <title>Revisão</title>
-  <meta name="description" content="Aqui na Revisão você não perde o conteúdo, aqui mandamos todo o conteúdo das materias em primeira mão!"> <!-- Descrição do site -->
-<meta name="keywords" content="materias, 9°ano b, Porto Seguro, Rio Grande RS"> <!-- Palavras-chave -->
-<meta name="author" content=" Equipe Revisão"> <!-- Autor do site -->
-<meta name="robots" content="index, follow"> <!-- Diretrizes para motores de busca -->
-  <link rel="icon" href="favicon.ico.png" type="image/x-icon"> <!-- Favicon padrão -->
-<link rel="apple-touch-icon" href="favicon.ico.png"> <!-- Ícone para dispositivos Apple -->
-
-    <link rel="stylesheet" href="style.css">
+    <title>Revisão - Manutenção</title>
+    <style>
+    @import
+    url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+      body {
+        font-family: "Rubik", sans-serif;
+        background: black;
+        color: white ;
+      }
+      .principal {
+        margin: 15px;
+      }
+      .principal h1 {
+        text-align: center;
+        font-size: 2.4em;
+        margin-bottom: 50px;
+      }
+      .principal p {
+        line-height: 1.7em;
+        font-size: 17px;
+      }
+      .principal-2 h2 {
+        text-align: center;
+        margin: 0px;
+        font-size: 1.3em;
+      }
+      .principal u {
+        color: #828ae4;
+      }
+      .principal-2 a {
+        text-decoration: none;
+        color: red;
+        font-size: 20px;
+      }
+      .revisao {
+        text-align: center;
+        margin: 0px;
+      }
+      .principal-2 {
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 50px;
+      }
+  
+  a {
+    color: blue;
+  }
+    </style>
 </head>
 <body>
-
-<div id="customAlert">
-        <div class="alert-content">
-            <button class="close-btn" onclick="closeAlert()">&times;</button>
-            <h2><u>NOVIDADES DAS ATUALIZAÇÕES</u></h2>
-          <h3><u> Alterações de Cores</u></h3>
-          <p> Na Interface inteira foi adicionadas novas cores mais escuras, com
-          um novo design moderno.</p>
-         <h3><u> Nova Fonte </u></h3>
-         <p> Foi Acionada a fonte "lato", para uma indentidade visual superior a
-         antiga.</p>
-         <h3> <u> Balão com interações de conteúdos </u></h3>
-         <p> Foram adicionados balões que conforme o conteúdo, muda a palavra de
-         destaque.</p>
-<h3><u> A volta da Área das anotações</u> </h3>
-<p> A Função de Fazer suas próprias anotações e personalizar elas está de
-volta!<br> Obs: Se caso você tinha uma anotação salva antes de removermos a
-função, ela vai retornar completamente do jeito que você deixou, exeto se caso você
-tenha desinstalado o aplicativo ou redefinido os dados.</p>
-<h3> Novo Calendário de Provas </h3>
-<p> Agora com um Visual bem mais organizado e com cores melhores, vai ser
-possível visualizar em ordem e com 100% de precisão as principais matérias.</p>
-
-    <div>
-      <hr>
-       A ultima alteração de conteúdo foi há <b> <span class="timer"
-       data-update-time="2024-09-06T11:52:00"></span> </b>
-    </div>
-        </div>
-    </div>
-    <div class="splash-screen">
-       
-    </div>
-  
-    <div class="main-content">
-      
-        <div class="navbar">
-          
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-              
-            </div>
-          
-            <div class="navbar-title">Revisão</div>  
-         
-          
-          <div class="menu" onclick="toggleMenu()">
-            
-    <span>&vellip;</span>
-    <ul id="menuItems">
-       <li id="alertButton">Novidades</li>
-      <li onclick="checkVersions()">Procurar Atualizações</li>
-<li onclick="novoLink()">Compartilhar</li>
-       <li onclick="toggleTransitions()">Desativar transições</li>
-    <li class="reload-btn" onclick="location.reload()">Atualizar Página
-    </li>
-
-
-    </ul>        
-            
-  </div>
-          
-        </div>
-        <div class="tabs-container" id="tabsContainer">
-            <div class="tabs" id="tabs">
-             
-                <a href="#inicio" class="tab-link">Inicio</a>
-                <a href="#matematica" class="tab-link"> Matematica</a>
-                <a href="#portugues" class="tab-link">Português</a>
-              <a href="#ciencias" class="tab-link">Ciências</a>
-              <a href="#ingles" class="tab-link">Inglês</a>
-              <a href="#geografia" class="tab-link">Geografia</a>
-              <a href="#historia" class="tab-link">História</a>
-              <a href="#artes" class="tab-link">Artes</a>
-              
-                <!-- Adicione mais abas conforme necessário -->
-            </div>
-        </div>
-      
-        <div class="content" id="content">
-            <div id="inicio" class="tab-content hidden">
-<div class="contener-main">
-  <h5>Bem vindo</h5>
-  <h2> Confira as novidades</h2>
-  <p> Descubra o que tem de novo, e, receba as principais notificações
-  importantes!</p>
-
-</div>
-<div class="contener-main">
-  <h5> Principal Destaque</h5>
-  <h2> Calendário de Provas</h2>
-<p> Tudo ja foi feito! Você não tem novas provas ou testes a fazer. Por favor,
-volte mais tarde.</p>
-</div>
-<div class="contener-main">
-  <h5>Atualizações</h5>
-  <h2> Importante!</h2>
-  <p> Nova atualização do Aplicativo Revisão. Faça o Download  agora para
-  uma melhor compatibilidade e melhorias de interface.</p>
-    <p> Se você quer conferir as novas funções e mais detalhes de atualizações,
-  confira clicando no menu dos 3 pontinhos e clique em "Novidades de
-  Atualizações".</p>
-  <p> Atualização Disponível apenas para aparelhos Android.</p>
-  <p> Obs: Se você ja instalou a versão mais atual, apenas ignore este aviso.</p>
-  <h4> Veja as mudanças:</h4>
-  <p> 1 - Mudança na cor da barra de status.
-  <p> 2 - Otimização melhorada.</p>
-  <h4> Link para a instalação:</h4>
-  <a href="https://www.mediafire.com/file/3eg7vfufbnj868o/Revis%25C3%25A3o_%2528%25C3%25BAltima_vers%25C3%25A3o_3.1%2529.apk/file">
-  Atualização 3.1</a>
-</div>
-<div class="contener-main">
-  <h5> Em Alta</h5>
-  <h2> Sugestões:</h2>
-                  <button class="accordion">Horários 9°Ano B</button>
-<div class="panel">
-       <div class="image-container">
-        <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png"
-        alt="Horarios 9 ano B 2024">
-       </div>
- 
-    </div>
-    </div>
-              
-              <div class="contener-main">
-                <h5> Anotações </h5>
-      <h2> Bloco de Notas </h2>
-              <textarea id="notepad" placeholder="Escreva aqui..."></textarea><br>
-<button onclick="salvarAnotacoes()">Salvar</button>
-<button onclick="limparAnotacoes()">Restaurar</button>
-                <button><label for="corTexto">Cor do texto</label>  </button>
-<input type="color" id="corTexto" onchange="mudarCorTexto()"> <br> <br>
-<label for="fonte"> Fonte do texto</label> 
-<select id="fonte" onchange="mudarFonte()"> 
-    <option value="Arial">Arial</option>
-<option value="Times New Roman">Times New Roman</option>
-<option value="Georgia">Georgia</option>
-<option value="Courier New">Courier New</option>
-<option value="'Merienda', cursive">Merienda</option>
-<option value="'Bitter', serif">Bitter</option>
-<option value="'Bebas Neue', cursive">Bebas Neue</option>
-<option value="'Playfair Display', serif">Playfair Display</option>
-</select>
-                <br> <br>
-<label for="tamanhoFonte">Tamanho do Texto</label>
-<input type="number" id="tamanhoFonte" min="10" max="24" value="14" onchange="mudarTamanhoFonte()">
-              </div>
+  <div class="principal">
+    <h1>ERRO! </h1>
+    <p> Essa versão do aplicativo Revisão está desatualizada. Nós atualizamos nossos serviços para uma melhor compatibilidade e otimização. </p>
+    <p> Você tem 2 opções, ou você instala a atualização do aplicativo ou acesse nosso site: <a href="https://revisaobr.github.io/Revis-o/">https://revisaobr.github.io/Revis-o/</a></p>
+    <p> Você também pode instalar a nova versão atravez do mediafire (Versão 3.3) <a href="https://www.mediafire.com/file/38hd7j3tnyh7iip/Revis%25C3%25A3o_%2528%25C3%259Altima_vers%25C3%25A3o_3.3%2529.apk/file"> Revisão Versão 3.3</a></p>
+   </div>
+   <div class="principal-2">
+         <h2> Atenciosamente;</h2>
+    <p class="revisao">  Revisão</p>
     
- 
-           </div>
-               
-          <!--Começo da div de matematica-->
-            <div id="matematica" class="tab-content hidden">
-              <div class="square">
-                <h1> Matemática</h1>
-                <h2>Essa prova já foi concluída. ✅</h2>
-                               <button class="accordion">Informações</button>
-<div class="panel">
-   <h3> Prova sem consulta</h3>
-                <h5> Data: 12 De julho - Sexta-Feira</h5>
-                <h5> Horario: 7h40 (Duas Aulas)</h5>
-                <h5> Valor: 30 Pontos</h5>
-        
- 
     </div>
-               
-                <br>
-                <h2> CONTEÚDOS:</h2>
-                <p> ⮕ Adições De Radicais</p>
-                <p> Isso Inclui Adição, subtração, mulplicação e Divisão</p>
-                <br>
-                <h3> Exercicio 1 </h3>
-                <p> A) Exemplo De Radicando iguais<br> <br>-6√7 + 8√7 -15√7 +2√7 -√7 =</p>
-              
-                <p>-6 -1 -15 = -21 <br> +2 +8 = +10 </p>
-                <p> -21 +10 = <u>-12</u></p>
-                <p> <mark> O Resultado é -12√7</mark></p> <br>
-                <h3> Explicação:</h3>
-                <p> Quando os Radicando(parte de dentro da raiz) são iguais, nós apenas somamos os Coeficiente(parte de fora da raiz)</p>
-                <p> Exemplo para entender melhor</p>
-                <p> Coeficiente-->4√7<--Radicando</p>
-                  <p> Nós apenas precisamos separar numeros negativos dos positivos e depois somar.</p>
-                  <br>
-                  <br>
-                  <h3> Exercicio 2</h3>
-                  <p> B) Radicando Diferentes.</p>
-                  <p>√8 √2 √18</p>
-                  <br> 
-                  <p><u>FATORAÇÃO DO 8</u>
-                    <br> 8|2<br>4|2<br> 2|2 <br> 1|</p>
-                  <p>2².2</p>
-                  <br> 
-                  <p> <u>FATORAÇÃO DO 18</u>
-                    <br> 18|2 <br> 09|3 <br> 03|3 <br> 01| 
-                  </p>
-                  <p>2.3²</p>
-                  <br>
-                  <br>
-                  <p> √8 √18 √2<br> 2².2<br>2.3²<br>1√2 <br> 
-                    2√2 3√2 1√2 <br> 
-                    <mark>O Resultado é 6√2 </mark>
-                  </p>
-                  <br>
-                  <h3> Explicação</h3>
-                  <p> Primeiro você precisa fazer a fatoração dos coeficientes(número fora da raiz)<br> Depois de fazer a <u>Fatoração</u> você vai simplificar com os resultados e depois vai somar tudo. O exemplo acima Mostra isso. </p>
-                  <br>   <p>Boa Prova!</p>
-              </div> 
-
-              <!-- fim da div de matemática<!-->
-            </div>
-            <div id="portugues" class="tab-content hidden">
-                
-              <div class="square">
-                <h1> Português</h1>
-                <p>Sem provas ou conteúdos acessíveis no momento. Por favor
-                volte mais tarde!</p>
-              </div>
-            </div>
-            <div id="ciencias" class="tab-content hidden">
-              <div class="square">
-                <h1>Ciências</h1>
-                               <p>Sem provas ou conteúdos acessíveis no momento. Por favor
-                volte mais tarde!</p>
-              </div>
-            </div>
-          <div id="ingles" class="tab-content hidden">
-            <div class="square">
-                <h1>Inglês</h1>
-                            <p>Sem provas ou conteúdos acessíveis no momento. Por favor
-                volte mais tarde!</p>
-            </div>
-            </div>
-         
-          <div id="geografia" class="tab-content hidden">
-            <div class="square"> 
-              <h1> Geografia</h1>
-                              <h2>Essa prova já foi concluída. ✅</h2>
-              
-                             <button class="accordion">Informações</button>
-<div class="panel">
-    <h3> Prova Sem Consulta</h3>
-              <h5> Data: 23 De Agosto</h5>
-              <h5> Horario: 10h10 (Duas Aulas)</h5>
-              <h5> Valor: 50 Pontos</h5>
-              <h5> Tempo Restante: <p id="countdown1"></p></h5>
-    </div>
-          
-            
-              <br>
-              <h3> Conteúdos</h3>
-              <p> O conteúdo da Prova vai ser em folhas, por isso no momento só tem uma folha disponivel para a prova e em breve vai ter mais folhas.</p>
-              <br>
-              <h3> Dica</h3>
-              <p> Para enchergar melhor o conteúdo, basta clicar na imagem e você vai ver mais de perto. Para fechar basta clicar em uma parte fora da imagem.</p>
-              <br>
-              <h3> Folha 1 - Europa</h3>
-
-    <img src="https://i.ibb.co/4S65Lzn/IMG-20240712-105331560-MFNR.jpg" 
-         alt="Prova de Geografia" 
-         style="width: 100%; height: auto; transition: transform 0.2s;" 
-         onmouseover="this.style.transform='scale(1.2)'" 
-         onmouseout="this.style.transform='scale(1)'">
-    </div>
-
-            </div>
-          <div id="historia" class="tab-content hidden">
-            <div class="square">
-                <h1>História</h1>
-                          <h2>Essa prova já foi concluída. ✅</h2>
-                  <button class="accordion">Informações</button>
-<div class="panel">
-              <h3> Prova Sem consulta</h3>
-              <h5> Data: 10 de Julho - Quarta Feira</h5>
-              <h5> Horario: 10h10 (Duas Aulas)</h5>
-              <h5> Valor: 30 Pontos</h5>
- 
-    </div>
-              
-    
-              
-              <h2> CONTEÚDOS</h2>
-              <p>⮕ República Dos Cafeicultores </p>
-              <p>⮕ Era Vargas</p>
-              <br>
-              <h2> Exercicios Sobre Republica Cafeicultores</h2>
-              <h3><u> Oligarquias no poder</u></h3>
-              <p> Durante o Império, O governo central impunha seu poder as provincias,nomeando quem iria governá-las. Com o estabelecimento da República, porém essa situação mudou: As familias <u> Oligarquias</u> estaduais, passaram a ter um enorme poder politico. </p>
-              <br>
-              <h3><u> O Coronelismo</u></h3>      
-              <p> Para Conquistar e manter o poder,os politicos famosos das familias poderosas induziram os eleitores em votar nos candidatos indicado por eles. Esses politicos eram fazendeiros e coronéis da <u> Guarda Nacional.</u> <br>
-               Esses coroneis conseguiam os votos por meio de <b>troca de favores:</b> Como Alimentos, remédio, proteção ou emprego. Mas eles exigiam que votassem nos candidados indicados por ele. O voto era controlado pelo coronel e é chamado de <b> Voto Cabresto.</b> Na Epoca essa fraude era generalizada: Falsicação de Resultados, Roubos nas urnas, E ate mesmo voto de crianças.</b></p>    
-              <br>              
-              <h3> <u> A Política Dos Governadores</u></h3>   
-              <p> Usando as mesmas praticas(Troca de Favores e corrupção eleitoral), as oligarquias ajudavan a eleger deputados e sanadores para presidente da Republica. Que Retribuia o &quotfavor&quot liberando verbais e dando apoio publico a elas. Esse esquema politico que ligava governos estaduais ao Presidente da Republica Recebeu o nome de <u> POLITICA DOS GOVERNADORES</u> e foi aplicado pelo então presidente <b> Campos Sales</b> que governou de 1898 e 1902.<br> Assim por trocas por meio de alianças e troca de favores que uniam municipios, estados e governo federal. As oligarquias Mantiveram-se no topo na maior parte da Primeira Republica. </p>     
-            <br>
-            <h3><u> O Café continuou na frente</u></h3>   
-            <p> Na Primeira Republica, o café continuou liderando as exportações brasileiras. Com os lucros de vendas obtidos com os Estados Unidos e a Europa, os cafeicultores brasileiros investiam em novas plantações. Com isso Em pouco tempo o Brasil passou a produzir muito mais café do que a quantidade que os paises estrangeiros estavam interessados em comprar. Assim milhões de sacas de café ficaram estocadas nos armazéns brasileiros.</p>            
-            <br>
-            <h3><u> O Convênio De Taubaté</u></h3>
-            <p> Preocupadoa com as quedas de seus lucros, os cafeicultores ajuda para o governo (São Paulo, Minas Gerais, Rio De Janeiro) os três maiores produtores de café responderam assinando o <b> Convênio De Taubaté</b>, em 1906. <br> Com esse acordo, o governo desses estados comprometian-se a comprar e armazenaras sacas de café excedentes, por meio de Emprestimos obtidos no exterior. A compra do café excedente regulava a oferta e a valorização do produto brasileiro no Exterior. Essa politica atendia aos interesses dos cafeicultores, diante do apoio recebido. Além do café outros proditos se destacaram como como: borracha, algodão, carnes e o Cacau exportados pelo Brasil.</p>
-            <br>
-            <br>
-            <h2> Exercicios Sobre Era Vargas</h2>
-            <h3><u> A Era Vargas</u></h3>
-            <p> Getúlio Vargas é, talvez a figura nais polemica da historia do Brasil. Para uns, ele foi um ditador a servições das elites, para outros, um estadista preocupado com os mais pobres.</p>
-            <br>
-            <h3><u>O Governo constitucional de Vargas</u></h3>
-            <p>Vargas assumiu o governo no momento em que o Brasil sofria ainda os efeitos da Grande Depressão (1929-1933). As falências de empresas, o desemprego e a inflação em alta elevavam a tensão social; esse contexto conturbado facilitou a entrada de ideias auto- ritárias vindas da Europa e a radicalização política. Nesse contexto, surgiram no Brasil dois agrupamentos políticos rivais: os integralistas e os aliancistas.</p>
-            <br>
-            <h3><u> Os integralistas</u></h3>
-            <p>Os integralistas, liderados pelo escritor Plinio Salgado, seguiam os princípios do fas- cismo de Benito Mussolini. Em 1932, os integralistas fundaram a Ação Integralista Brasileira (AIB), uma organização política que tinha por lema Deus, Pátria e Família e que defendia: 
-              <br> <br>Um governo autoritário dirigido por um chefe e um partido único;
-
-              <br>O predomínio dos interesses da nação sobre os dos indivíduos;
-  
-              <br> A censura aos meios de comunicação. <br> <br>
-
-              <br>Assim como os fascistas, os integralistas faziam uso da violência contra adversários politicos, principalmente contra os comunistas. Apelando para um nacionalismo agressivo, a AIB conseguiu o apoio de membros das camadas médias, do alto clero, do empresariado e das Forças Armadas. A AIB chegou a possuir mais de 100 mil filiados e mais de mil núcleos espalhados pelo país.</p>
-            <br>
-            <h3> <u> Os Aliancistas</u></h3>
-            <p>Em oposição aos integralistas, foi fundada no Brasil, em 1935, a Aliança Nacional Libertadora (ANL), uma frente popular liderada pelos comunistas, chefiada pelo ex-capitão Luis Carlos Prestes. Os principais pontos do programa da ANL eram o anti-imperialismo não pagamento da divida externa brasileira, a nacionalização das empresas estrangeiras a reforma agrária, e a formação de um governo popular,</p>
-            <br>
-            <h3><u> O Levante Comunista</u></h3>
-            <p>Em 5 de julho de 1935, a lider comunista Luis Carlos Prestes lançou um manifesto que propunha a derrubada do governo Vargas e a formação de um governo popular revolucionário. O governo Vargas reagiu ao manifesto fechando a sede da ANI., bem como a maioria dos núcleos que ela tinha pelo pais.
-
-               <br>Diante disso, um grupo de sargentos, cabos e soldados comunistas das cidades de Natal, Recife e Rio de Janeiro promoveram um levante armado contra o governo, rotulado à época de Intentona Comunista. Agindo com rapidez, o governo Vargas sufocou os levantes e passou a prender e a torturar os simpatizantes da ANL, comunistas ou não.
-
-              <br>As cadeias das principais cidades brasileiras encheram-se de presos políticas, entre os quais estavam o escritor alagoano Graciliano Ramos e a ativista alemă Olga Benário, esposa de Prestes.</p>
-            <br>
-            <h2> Resumo Feito pelo Professor</h2>
-            <h4> Primeira Republica</h4>
-            <h5>1889 <br> - Os Cafeicultores estão no poder <br> - A Elite de Sp e MG se reveza ao poder. <br> <br> Caracteristicas: <br> - Coronelismo <br> - Voto de Carabresto <br> - Clentismo <br> - Politica dos Governadores</h5>      
-            <br>             
-            <h4> Governo Provisorio </h4>
-            <h5>1930 <br> - Eleição <br> - Sp quer se manter no poder <br> - Getulio Vargas perde a eleição <br> - Outubro: Vargas dopõe o presidente <br> - Vargas fecha as assembleias <br> - Nomeia interventores <br> - Revolta constitucionalista(sp 09/07/1932) <br> - Nova Constituição <br> - Nova Constituição <br> - Vargas eleito para 4 anos (1934- 1938) <br> </h5>
-            <br>
-            <h4> Governo Constitucional</h4>
-            <h5> - 1934 <br> - Codigo Eleitoral/Justiça do trabalho <br> - Voto Secreto/Feminino <br>  - Diteitos Trabalhistas - Vargas Pai dos pobres <br> - Ação integralista brasileira  <br> - Aliança Nacionalista Libertadora <br>  - Intentona Comunista (1935) <br> - Plano Coben (1937)</h5>
-            <br>
-            <h4> Golpe de Vargas</h4>
-            <h5> - 1937 <br> Estado novo</h5>
-            </div> 
-              
-              
-              
-
-
-            </div>
-          <div id="artes" class="tab-content hidden">
-            <div class="square">
-                <h1>Artes</h1>
-                <h2>Essa prova já foi concluída. ✅</h2>
-            
-
-              <br>
-              <h2> ARTE CONCEITUAL</h2>
-              
-              <br>
-              <h3>1) Quando Começou a divulgação da arte conceitual?:</h3>
-              <p> A Partir dos anos 1970</p>
-              <br>
-              
-              
-              <h3>2) Quais são as principais caracteristicas da arte conceitual?</h3>
-              <p> A Recusa Do Objetudismo e Questionar o Sistema</p>
-              <br>
-              
-              
-              <h3> 3) Qual é a importancia (Conceito) na arte conceitual?</h3>
-              <p> Um Publico participativo por ser produzida atravez de metrapos</p>
-              <br>
-              
-              
-              <h3> 4) O que Artistas conceituais recusam em relação a os objetos abstratos?</h3>
-              <p> Pra eles são produtos da mente humana ou convenções linguisticas</p>
-              <br> 
-              <h3> 5) Qual é o objetivo dos artistas conceituais em relação á apressiação tradicional da arte?  </h3>
-              <p> Eles são contra uma apreciação puramente contemplatina tradicional da arte, o que se pretende é levantar uma discussão ou ideias, debate do que é a arte.</p>
-              <br> 
-              <h3> 6) Porque a arte conceitual valoriza um publico participativo?</h3>
-              <p> Porque o expectador não iria ser capaz, então convida o publico a acionar outros dispositivos levantando a necessidade de interatividade.</p>
-              <br> 
-              <h3> 7) Quem foi Helio Oiticica e porque ele ficou famoso?</h3>
-              <p> Foi um artista conceitual brasileiro que ficou famoso por realizar uma serie de instalações sensoriais, entre elas o Parangolé</p>
-              <br> 
-              <h3> 8) Descreva as caracteristicas dos parangolés de helio oitica</h3>
-              <p> Eram obras compostas por capas de naturais diversos: Uma serie de texturas e cores destintas</p>
-              <br> 
-              <h3> 9) O que a obra de &#8220;Baba antropofagica&#8221; de Lygia clank representa e estimula?</h3>
-              <p> Obra de 1973, era envolvida por fios de linhas que passavam pela boca dos que estavam em volta, formando uma rede sobre o corpo deitado, sendo assim uma das maiores importancias da arte brasileira</p>
-              <br> 
-              <h3> 10) Qual é a mensagem por tras da obra&#8220;Ouvidos&#8221; de Cildo meireles?</h3>
-              <p> Fala sobre o processo de colonizacão eu europeu, fazendo uma critica e estimulando e fazendo o espectador refletir sobre aquele movimento na história</p>
-              <br> 
-              <h3> 11) O que simbolicamente os livros representam na obra &#8220;Belief System&#8221; De John Dathan?</h3>
-              <p> Os livros são vistos pelo artista não só como fonte de conhecimente e um repositorio de informações mas tambem como fonte de erros e testemunha pariado</p>
-              <br> 
-              <h3> 12) Quem foi marcel duchamp e qual foi sua contribuicão para a arte conceitual?</h3>
-              <p> Foi um percussor da arte conceitual no momento em que colocou um mictorio no museu e chamou de arte, obra (A fonte) de 1917</p>
-              <br>  
-              <h3> 13) O que são Ready mades e qual foi sua importancia na arte conceitua?</h3>
-              <p>Era o conceito de arte que o artista quis demonstrar e que levaria mais ao resultado final da obra.</p>
-              <br> 
-              <h3> 14) Qual foi a grande questão da arte conceitual?</h3>
-              <p> É definir os limites e fronteiras do fazer artistico, ou sujo, ele é baleado na indagação</p>
-              <br> 
-              <h3> 15) Quais são as principais caracteristicas da arte conceitual mencionadas no texto?</h3>
-              <p> São: Critica ao formalismo e ao mercado de arte, critica do materialismo e a o mercado de consumo, populção da arte como veiculo de comunicação, arte mental e reflexiva, reuptura com a arte classica e formal, e uso de arte classica e formal, e uso de fotografia, textos, videos, imagens, istalações </p>
-              <br> 
-              <h3> 16) Quando foi a arte conceitual chegou no Brasil?</h3>
-              <p>Chegou no Brasi em 1970</p>
-              <br> 
-              <h3> 17) Quais são alguns artistas conceituais brasileiros?</h3>
-              <p> Cildo Meireles, Arthur Barrio, Carlos Fajado,José Resende Filho, Mia schendel, Waltercio Caldas</p>
-              <br>
-              <h3> 18) Como a arte conceitual se diferencia da arte classica?</h3>
-              <p>A arte conceitual se diferencia da arte clássica ao priorizar a ideia ou conceito sobre a habilidade técnica e a estética, desafiando as formas tradicionais e a materialidade da obra, enquanto a arte clássica foca na beleza, na técnica e na representação realista ou idealizada.</p>
-              <br>
-              <h3> 19) Quais são os tipos de midia e formas de expressão usadas na arte conceitual?</h3>
-              <p> Uso de Fotografias, textos, videos, instalações e perfomaces</p>
-              <br>
-              <h3> 20) Como a arte conceitual critica o formalismo e o mercado da arte</h3>
-              <p>A arte conceitual critica o formalismo ao priorizar a ideia sobre a forma e desafia o mercado da arte ao criar obras imateriais e efêmeras que resistem à comercialização.</p> 
-              <br> <br> 
-              <hr>
-                  <div>
-                    <b>  Editado pela Ultima vez:</b> há <span class="timer" data-update-time="2024-07-23T19:30:00"></span><br> <br><b> Por:</b> Equipe Revisão
-    </div>
-     
-              </div>
-          
-            </div>
-          
-            <!-- Adicione mais conteúdos conforme necessário -->
-        </div>
-    </div>
-     <script src="scripts.js"></script>
-<script> 
-
-
-document.getElementById('alertButton').onclick = function() {
-            document.getElementById('customAlert').style.display = 'flex';
-        };
-
-        function closeAlert() {
-            document.getElementById('customAlert').style.display = 'none';
-        }
-        function fecharNotificacao(elemento) {
-            elemento.classList.add('hidden');
-        }
-
-</script>
-
+   </div>
 </body>
 </html>
